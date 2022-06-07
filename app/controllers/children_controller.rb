@@ -33,7 +33,7 @@ class ChildrenController < ApplicationController
 
   end
 
-  def destory
+  def destroy
     @child.destroy
     redirect_to user_path(@child.user)
   end
@@ -41,8 +41,7 @@ class ChildrenController < ApplicationController
   private
 
   def find_child
-    @child = Child.find(params[:index])
-
+    @child = Child.find(params[:id])
   end
 
   def list_params

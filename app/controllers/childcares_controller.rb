@@ -6,7 +6,7 @@ class ChildcaresController < ApplicationController
   end
 
   def show
-    @childcare = Childcare.find(params[:index])
+    @childcare = Childcare.find(params[:id])
   end
 
   def childcare_params

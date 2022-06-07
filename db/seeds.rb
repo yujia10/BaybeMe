@@ -18,12 +18,10 @@ childcare1 = Childcare.new(name: "Greenwood", email: "greenwood@greenwood.com.au
 childcare1.photo.attach(io: greenwood, filename: "Greenwood.jpg", content_type: "image/jpg")
 childcare1.save!
 
-
 # **************USER SEEDS*********************
 
 phillip = User.create!(first_name: "Phillip", last_name: "Drummond", phone_number: "0421458844", address: "10 Janice Rd, Glen Waverley VIC 3150", email: "phillip@drummond.com", password: "secret")
-alan = User.create!(first_name: "Alan", last_name: "Harper", phone_number: "0466804477", address:"256 Ferntree Gully Rd, Notting Hill VIC 3168", email: "alan@harper.com", password: "secret")
-
+alan = User.create!(first_name: "Alan", last_name: "Harper", phone_number: "0466804477", address: "256 Ferntree Gully Rd, Notting Hill VIC 3168", email: "alan@harper.com", password: "secret")
 
 # **************CHILDREN SEEDS*********************
 

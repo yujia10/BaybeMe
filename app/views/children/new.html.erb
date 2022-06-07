@@ -1,2 +1,10 @@
-<h1>Children#new</h1>
-<p>Find me in app/views/children/new.html.erb</p>
+  <h1>Add a child</h1>
+  <%= simple_form_for @child do |f| %>
+   <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :gender %>
+    <%= f.input :dob %>
+    <%= f.submit %>
+  <% end %>
+
+  <%= link_to "Back to children", children_path %>

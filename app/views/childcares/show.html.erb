@@ -1,2 +1,5 @@
-<h1>Childcares#show</h1>
-<p>Find me in app/views/childcares/show.html.erb</p>
+<h1><%= @childcare.name %></h1>
+<p><%= @childcare.description %></p>
+
+<%= link_to "APPLY NOW", new_childcare_application_path(@childcare)%>
+<%= link_to "Back to childcares", childcares_path%>
