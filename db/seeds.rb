@@ -27,6 +27,6 @@ alan = User.create!(first_name: "Alan", last_name: "Harper", phone_number: "0466
 
 # **************CHILDREN SEEDS*********************
 
-arnold = Child.create!(first_name: "Arnold", last_name: "Jackson", gender: 1, dob: Date.new(2020,10,12), user_id: 3)
-willis = Child.create!(first_name: "Willis", last_name: "Jackson", gender: 1, dob: Date.new(2019,12,29), user_id: 3)
-jake = Child.create!(first_name: "Jake", second_name: "Harper", gender: 1, dob: Date.new(2020,03,01), user_id: 4)
+arnold = Child.create!(first_name: "Arnold", last_name: "Jackson", gender: 1, dob: Date.new(2020,10,12), user: phillip)
+willis = Child.create!(first_name: "Willis", last_name: "Jackson", gender: 1, dob: Date.new(2019,12,29), user: phillip)
+jake = Child.create!(first_name: "Jake", last_name: "Harper", gender: 1, dob: Date.new(2020,03,01), user: alan)
