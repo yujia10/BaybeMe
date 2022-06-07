@@ -8,4 +8,8 @@ class ChildcaresController < ApplicationController
   def show
     @childcare = Childcare.find(params[:index])
   end
+
+  def childcare_params
+    params.require(:childcare).permit(:name, :email, :address, :url, :description, :created_at, :updated_at, :photo)
+  end
 end
