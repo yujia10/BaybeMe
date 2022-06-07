@@ -1,2 +1,13 @@
 <h1>Childcares#index</h1>
 <p>Find me in app/views/childcares/index.html.erb</p>
+
+    <div>
+      <% @childcares.each do |childcare| %>
+      <%= link_to childcare_path(childcare)  do %>
+       <div style="border: 1px solid grey">
+          <p><%= childcare.name %></p>
+          <p><%= childcare.email %></p>
+         </div>
+      <% end %>
+      <% end %>
+    </div>
