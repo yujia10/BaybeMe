@@ -3,10 +3,8 @@
 
     <div>
       <% @childcares.each do |childcare| %>
-       <div>
           <p><%= link_to childcare.name, childcare_path(childcare) %></p>
           <p><%= childcare.email %></p>
           *******************************************************************
-       </div>
      <% end %>
     </div>

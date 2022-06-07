@@ -2,11 +2,13 @@
 
     <div>
       <% @children.each do |child| %>
-        <p><%= child.first_name %></p>
-        <p><%= child.last_name %></p>
+        <p><%= child.first_name %> <%= child.last_name %></p>
         <%= link_to "view profile", child_path(child)%>
-        <%= link_to('Edit', edit_child_path(child), class:'button-secondary')%>
-        <%= link_to('Delete', child_path(child), method: :delete, class:'button-secondary')%>
+        <%= link_to "Edit", edit_child_path(child) %>
+        <%= link_to "Delete",
+            child_path(child),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
       <% end %>
     </div>
 
