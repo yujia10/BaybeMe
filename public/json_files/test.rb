@@ -4,7 +4,7 @@ require "rest-client"
 
 
 
-response = RestClient.get "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.283581,149.101273&radius=5000&types=establishment&name=child+care+centre&key=AIzaSyBSRAcvG8WZfaVpDmbkfpBMHXxf9KhZocw"
+response = RestClient.get "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.283581,149.101273&radius=5000&types=establishment&name=child+care+centre&key=#{ENV['Google_api']}"
 
 repos = JSON.parse(response)
 

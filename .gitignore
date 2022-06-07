@@ -26,7 +26,7 @@
 
 /public/assets
 .byebug_history
-/app/assets/json_files/*
+/public/assets/json_files
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
