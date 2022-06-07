@@ -5,6 +5,6 @@
       <% @childcares.each do |childcare| %>
           <p><%= link_to childcare.name, childcare_path(childcare) %></p>
           <p><%= childcare.email %></p>
-          *******************************************************************
+          <hr>
      <% end %>
     </div>
