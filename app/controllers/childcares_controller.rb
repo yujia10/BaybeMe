@@ -9,7 +9,7 @@ class ChildcaresController < ApplicationController
     @childcare = Childcare.find(params[:id])
   end
 
-  def childcare_params
-    params.require(:childcare).permit(:name, :email, :address, :url, :description, :created_at, :updated_at, :photo)
-  end
+  # def childcare_params
+  #   params.require(:childcare).permit(:name, :email, :address, :url, :description, :created_at, :updated_at, :photo)
+  # end
 end
