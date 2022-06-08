@@ -67,3 +67,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
