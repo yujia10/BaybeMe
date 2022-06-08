@@ -1,0 +1,47 @@
+{
+  "html_attributions": [],
+  "result": {
+    "formatted_address": "55 Dalton St, Orange NSW 2800, Australia",
+    "formatted_phone_number": "(02) 6361 2575",
+    "geometry": { "location": { "lat": -33.2750909, "lng": 149.0963752 } },
+    "name": "The Willows Early Learning Centre",
+    "email": "willowselc@optusnet.com.au",
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": { "day": 1, "time": "1800" },
+          "open": { "day": 1, "time": "0630" }
+        },
+        {
+          "close": { "day": 2, "time": "1800" },
+          "open": { "day": 2, "time": "0630" }
+        },
+        {
+          "close": { "day": 3, "time": "1800" },
+          "open": { "day": 3, "time": "0630" }
+        },
+        {
+          "close": { "day": 4, "time": "1800" },
+          "open": { "day": 4, "time": "0630" }
+        },
+        {
+          "close": { "day": 5, "time": "1800" },
+          "open": { "day": 5, "time": "0630" }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 6:30 AM – 6:00 PM",
+        "Tuesday: 6:30 AM – 6:00 PM",
+        "Wednesday: 6:30 AM – 6:00 PM",
+        "Thursday: 6:30 AM – 6:00 PM",
+        "Friday: 6:30 AM – 6:00 PM",
+        "Saturday: Closed",
+        "Sunday: Closed"
+      ]
+    },
+    "url": "https://maps.google.com/?cid=16259882967298373512",
+    "website": "https://willowspreschool.com.au/"
+  },
+  "status": "OK"
+}

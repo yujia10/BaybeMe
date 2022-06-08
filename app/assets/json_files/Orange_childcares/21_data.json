@@ -1,0 +1,56 @@
+{
+  "html_attributions": [],
+  "result": {
+    "formatted_address": "88 Dalton St, Orange NSW 2800, Australia",
+    "formatted_phone_number": "1800 580 580",
+    "geometry": { "location": { "lat": -33.2767138, "lng": 149.1010298 } },
+    "name": "Play Learn LiveBetter Preschool",
+    "email": "preschoolcontact@livebetter.org.au",
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": { "day": 1, "time": "1600" },
+          "open": { "day": 1, "time": "0830" }
+        },
+        {
+          "close": { "day": 2, "time": "1600" },
+          "open": { "day": 2, "time": "0830" }
+        },
+        {
+          "close": { "day": 3, "time": "1600" },
+          "open": { "day": 3, "time": "0830" }
+        },
+        {
+          "close": { "day": 4, "time": "1600" },
+          "open": { "day": 4, "time": "0830" }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 8:30 AM – 4:00 PM",
+        "Tuesday: 8:30 AM – 4:00 PM",
+        "Wednesday: 8:30 AM – 4:00 PM",
+        "Thursday: 8:30 AM – 4:00 PM",
+        "Friday: Closed",
+        "Saturday: Closed",
+        "Sunday: Closed"
+      ]
+    },
+    "rating": 5,
+    "reviews": [
+      {
+        "author_name": "Rebecca Brewer Taylor",
+        "author_url": "https://www.google.com/maps/contrib/114558126450487683894/reviews",
+        "language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/AOh14GjiqA1hMnaULuAhSiUJ43px1G2KiIEqUDr9eP8565M=s128-c0x00000000-cc-rp-mo-ba4",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "Friendly people who care",
+        "time": 1599193386
+      }
+    ],
+    "url": "https://maps.google.com/?cid=9608108803720103303",
+    "website": "https://livebetter.org.au/location/orange-play-learn-livebetter-preschool/"
+  },
+  "status": "OK"
+}

@@ -1,0 +1,67 @@
+{
+  "html_attributions": [],
+  "result": {
+    "formatted_address": "59-67 Bathurst Rd, Orange NSW 2800, Australia",
+    "formatted_phone_number": "0427 490 914",
+    "geometry": { "location": { "lat": -33.2918885, "lng": 149.112714 } },
+    "name": "Gowrie NSW Kinross Wolaroi Outschool School Hours Care",
+    "email": "oshc.kinross@gowriensw.com.au",
+    "opening_hours": {
+      "open_now": false,
+      "periods": [
+        {
+          "close": { "day": 1, "time": "0900" },
+          "open": { "day": 1, "time": "0630" }
+        },
+        {
+          "close": { "day": 1, "time": "1830" },
+          "open": { "day": 1, "time": "1500" }
+        },
+        {
+          "close": { "day": 2, "time": "0900" },
+          "open": { "day": 2, "time": "0630" }
+        },
+        {
+          "close": { "day": 2, "time": "1830" },
+          "open": { "day": 2, "time": "1500" }
+        },
+        {
+          "close": { "day": 3, "time": "0900" },
+          "open": { "day": 3, "time": "0630" }
+        },
+        {
+          "close": { "day": 3, "time": "1830" },
+          "open": { "day": 3, "time": "1500" }
+        },
+        {
+          "close": { "day": 4, "time": "0900" },
+          "open": { "day": 4, "time": "0630" }
+        },
+        {
+          "close": { "day": 4, "time": "1830" },
+          "open": { "day": 4, "time": "1500" }
+        },
+        {
+          "close": { "day": 5, "time": "0900" },
+          "open": { "day": 5, "time": "0630" }
+        },
+        {
+          "close": { "day": 5, "time": "1830" },
+          "open": { "day": 5, "time": "1500" }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 6:30 – 9:00 AM, 3:00 – 6:30 PM",
+        "Tuesday: 6:30 – 9:00 AM, 3:00 – 6:30 PM",
+        "Wednesday: 6:30 – 9:00 AM, 3:00 – 6:30 PM",
+        "Thursday: 6:30 – 9:00 AM, 3:00 – 6:30 PM",
+        "Friday: 6:30 – 9:00 AM, 3:00 – 6:30 PM",
+        "Saturday: Closed",
+        "Sunday: Closed"
+      ]
+    },
+    "url": "https://maps.google.com/?cid=10807551876678154944",
+    "website": "https://www.gowriensw.com.au/out-of-hours-care/kinross-wolaroi"
+  },
+  "status": "OK"
+}

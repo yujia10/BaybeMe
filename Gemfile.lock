@@ -107,9 +107,12 @@ GEM
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
+    down (5.3.1)
+      addressable (~> 2.8)
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.15.5)
+    fileutils (1.6.0)
     font-awesome-sass (5.6.1)
       sassc (>= 1.11)
     globalid (1.0.0)
@@ -277,6 +280,8 @@ DEPENDENCIES
   cloudinary (~> 1.16.0)
   devise
   dotenv-rails
+  down
+  fileutils
   font-awesome-sass (~> 5.6.1)
   jbuilder (~> 2.7)
   listen (~> 3.3)

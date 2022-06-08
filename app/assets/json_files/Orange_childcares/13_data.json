@@ -1,0 +1,59 @@
+{
+  "html_attributions": [],
+  "result": {
+    "formatted_address": "52-54 Farrell Rd, Orange NSW 2800, Australia",
+    "formatted_phone_number": "(02) 6361 1854",
+    "geometry": { "location": { "lat": -33.2542173, "lng": 149.1036031 } },
+    "name": "Waratah Early Learning Centre PTY LTD",
+    "email": "waratahelc@gmail.com",
+    "opening_hours": {
+      "open_now": true,
+      "periods": [
+        {
+          "close": { "day": 1, "time": "1830" },
+          "open": { "day": 1, "time": "0630" }
+        },
+        {
+          "close": { "day": 2, "time": "1830" },
+          "open": { "day": 2, "time": "0630" }
+        },
+        {
+          "close": { "day": 3, "time": "1830" },
+          "open": { "day": 3, "time": "0630" }
+        },
+        {
+          "close": { "day": 4, "time": "1830" },
+          "open": { "day": 4, "time": "0630" }
+        },
+        {
+          "close": { "day": 5, "time": "1830" },
+          "open": { "day": 5, "time": "0630" }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 6:30 AM – 6:30 PM",
+        "Tuesday: 6:30 AM – 6:30 PM",
+        "Wednesday: 6:30 AM – 6:30 PM",
+        "Thursday: 6:30 AM – 6:30 PM",
+        "Friday: 6:30 AM – 6:30 PM",
+        "Saturday: Closed",
+        "Sunday: Closed"
+      ]
+    },
+    "rating": 5,
+    "reviews": [
+      {
+        "author_name": "C Panjaitan",
+        "author_url": "https://www.google.com/maps/contrib/100086536971147895165/reviews",
+        "language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/AOh14GgR59ma5TppSMbCCaZevsEF8vBS4G7JAS57s7YahzM=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "in the last week",
+        "text": "We are in Perth now, but my daughter was there before. She had a good time and always remember her educator, Sky. She didnt like fruits before but since we put her in there, she likes to eat fruits. She likes to eat food that she didnt like before and wants to try to eat before saying no. The other educators also amazing. People at orange said this is the best early learning centre in Orange. Before this centre, I put my daughter in 2 other centres,and this one is the best. Thank you.",
+        "time": 1654245322
+      }
+    ],
+    "url": "https://maps.google.com/?cid=893204357423066823"
+  },
+  "status": "OK"
+}
