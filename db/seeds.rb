@@ -5,18 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require_relative "./create_childcares/initiate.rb"
 
 require "open-uri"
-Childcare.destroy_all
+
 User.destroy_all
 Child.destroy_all
-# **************CHILDCARE SEEDS*********************
 
-greenwood = URI.open("https://res.cloudinary.com/dxu35uhgf/image/upload/v1654567325/pqwjz2j42konkddxdsdr.jpg")
-description1 = "See where the extraordinary happens at Greenwood Notting Hill. Our early learning and long day care centre."
-childcare1 = Childcare.new(name: "Greenwood", email: "greenwood@greenwood.com.au", address: "16 Ferntree Place, Notting Hill 3168" , url: "https://www.greenwood.com.au/notting-hill", description: description1)
-childcare1.photo.attach(io: greenwood, filename: "Greenwood.jpg", content_type: "image/jpg")
-childcare1.save!
+# **************CHILDCARE SEEDS*********************
+# create_childcares_ids
+# insert_childcare_information
+
+
+
 
 # **************USER SEEDS*********************
 
