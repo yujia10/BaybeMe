@@ -30,7 +30,6 @@ class ChildrenController < ApplicationController
     else
       render :edit
     end
-
   end
 
   def destroy
