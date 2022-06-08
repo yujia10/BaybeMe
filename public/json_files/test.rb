@@ -14,5 +14,5 @@ File.write('app/assets/json_files/1.json', JSON.dump(repos))
 file = File.read "app/assets/json_files/1.json"
 
 hash = JSON.parse(file)
-byebug
+
 hash["results"]
