@@ -45,3 +45,5 @@ yarn-debug.log*
 .DS_Store
 .env*
 .env*
+public/json_files
+public/json_files*
