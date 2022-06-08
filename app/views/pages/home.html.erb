@@ -1,8 +1,15 @@
-<h1>Home </h1>
 
-<h1 class="header-font">title</h1>
-<p class="base-font">paragraph</p>
-<div style="width: 100px; height: 100px; border: 1px solid black"></div>
-<div class="btn primary" style="width: 100px; height: 100px; border: 1px solid black"></div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.5)), url(<%= image_url('banner-test.jpg') %>);">
+  <div class="banner-container">
+    <h1>BaybeME</h1>
+    <p>You've got a lot to care about...let us take care of daycare</p>
+  </div>
+</div>
 <hr>
-<button class="btn btn-primary">test color</button>
+<button class="button-primary">button-primary</button>
+<button class="button-outline">button-outline</button>
+
+<%= render 'shared/banner_right' %>
+
+<%= render 'shared/reviews_banner' %>
+<%= render 'shared/banner_left' %>
