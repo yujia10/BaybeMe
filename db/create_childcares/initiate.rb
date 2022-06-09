@@ -1,7 +1,6 @@
 require 'pry-byebug'
 require "json"
 require "rest-client"
-require "open-uri"
 
 
 CHILDCARE_INDEX = "app/assets/json_files/childcare_index.json"
