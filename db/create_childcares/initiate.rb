@@ -119,13 +119,12 @@ def save_photos(hash, childcare)
   end
 end
 
-
 def add_long_alt
   Childcare.all.each_with_index do |childcare, index|
     file = File.read "app/assets/json_files/Orange_childcares/#{index+4}_data.json"
     hash = JSON.parse(file)
     childcare[:latitude] = hash["result"]["geometry"]["location"]["lat"]
-    childcare[:longtitude] = hash["result"]["geometry"]["location"]["lng"]
+    childcare[:longitude] = hash["result"]["geometry"]["location"]["lng"]
     childcare.save!
   end
 end
