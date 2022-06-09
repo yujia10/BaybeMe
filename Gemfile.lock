@@ -118,14 +118,23 @@ GEM
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.15.5)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
     font-awesome-sass (5.6.1)
       sassc (>= 1.11)
     geocoder (1.8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    http (5.0.4)
+      addressable (~> 2.8)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.2)
+      llhttp-ffi (~> 0.4.0)
     http-accept (1.7.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
+    http-form_data (2.3.0)
     httparty (0.20.0)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
@@ -137,6 +146,9 @@ GEM
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
+    llhttp-ffi (0.4.0)
+      ffi-compiler (~> 1.0)
+      rake (~> 13.0)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -159,6 +171,8 @@ GEM
     nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pastel (0.8.0)
+      tty-color (~> 0.5)
     pg (1.3.5)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -258,6 +272,17 @@ GEM
       sprockets (>= 3.0.0)
     thor (1.2.1)
     tilt (2.0.10)
+    titleize (1.4.1)
+    tty-color (0.6.0)
+    tty-cursor (0.7.1)
+    tty-prompt (0.23.1)
+      pastel (~> 0.8)
+      tty-reader (~> 0.8)
+    tty-reader (0.9.0)
+      tty-cursor (~> 0.7)
+      tty-screen (~> 0.8)
+      wisper (~> 2.0)
+    tty-screen (0.8.1)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -286,6 +311,7 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    wisper (2.0.1)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.5.4)
@@ -304,6 +330,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   font-awesome-sass (~> 5.6.1)
+  http
   geocoder
   jbuilder (~> 2.7)
   listen (~> 3.3)
@@ -320,6 +347,8 @@ DEPENDENCIES
   sidekiq-failures (~> 1.0)
   simple_form!
   spring
+  titleize
+  tty-prompt
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
