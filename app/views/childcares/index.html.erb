@@ -1,10 +1,6 @@
-<h1>Childcares</h1>
 
-
-    <div>
-      <% @childcares.each do |childcare| %>
-          <p><%= link_to childcare.name, childcare_path(childcare) %></p>
-          <p><%= childcare.email %></p>
-          <hr>
-     <% end %>
-    </div>
+<div class="childcares-index-container">
+  <% @childcares.each do |childcare| %>
+    <%= render 'shared/childcare_large_card', childcare: childcare %>
+  <% end %>
+</div>
