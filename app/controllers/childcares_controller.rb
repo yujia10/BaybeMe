@@ -3,6 +3,15 @@ class ChildcaresController < ApplicationController
 
   def index
     @childcares = Childcare.all
+
+    @markers = @childcares.geocoded.map do |childcare|
+      {
+        lat: childcare.latitude,
+        lng: childcare.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { childcare: childcare }),
+        image_url: helpers.asset_url("map2.png")
+      }
+    end
   end
 
   def show
