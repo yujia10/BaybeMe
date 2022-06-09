@@ -73,3 +73,8 @@ gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 
 gem 'blazer'
+
+
+ gem 'ruby-openai'
+
+ gem "geocoder"

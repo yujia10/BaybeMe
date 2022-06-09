@@ -1,7 +1,6 @@
 require 'pry-byebug'
 require "json"
 require "rest-client"
-require "open-uri"
 
 
 CHILDCARE_INDEX = "app/assets/json_files/childcare_index.json"
@@ -117,5 +116,15 @@ def save_photos(hash, childcare)
       "&photo_reference=#{element['photo_reference']}"\
       "&key=#{ENV['GOOGLE_KEY']}")
     childcare.photos.attach(io: file2, filename: 'nes.png', content_type: 'image/png')
+  end
+end
+
+def add_long_alt
+  Childcare.all.each_with_index do |childcare, index|
+    file = File.read "app/assets/json_files/Orange_childcares/#{index+4}_data.json"
+    hash = JSON.parse(file)
+    childcare[:latitude] = hash["result"]["geometry"]["location"]["lat"]
+    childcare[:longitude] = hash["result"]["geometry"]["location"]["lng"]
+    childcare.save!
   end
 end

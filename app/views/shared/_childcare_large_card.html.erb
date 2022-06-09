@@ -1,0 +1,17 @@
+  <% if childcare.photos.attached? %>
+    <div class="card card-side  childcare_large_card mx-auto shadow-xs">
+        <div class="relative lg:w-1/2">
+          <img src='<%= childcare.photos.first.url %>' alt="" class="childcare-image object-cover w-full lg:absolute  " />
+          <svg class="absolute top-0 right-0 hidden h-full text-white lg:inline-block" viewBox="0 0 20 104" fill="currentColor">
+          <polygon points="17.3036738 5.68434189e-14 20 5.68434189e-14 20 104 0.824555778 104"></polygon>
+          </svg>
+        </div>
+      <div class="card-body">
+        <h2 class="card-title"><%= childcare.name %></h2>
+        <p>Click the button to watch on Jetflix app.</p>
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary">Watch</button>
+        </div>
+      </div>
+    </div>
+  <% end %>
