@@ -1,5 +1,4 @@
-<h1><%= @childcare.name %></h1>
-<p><%= @childcare.description %></p>
-
-<%= link_to "APPLY NOW", new_childcare_application_path(@childcare)%>
-<%= link_to "Back to childcares", childcares_path%>
+<div class="py-4 mx-4">
+  <%= link_to "BACK", childcares_path%>
+  <%= render 'shared/show_photo_banner' %>
+</div>
