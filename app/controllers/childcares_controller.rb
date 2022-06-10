@@ -2,7 +2,11 @@ class ChildcaresController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @childcares = Childcare.all
+    if params[:query].present?
+      @childcares = Childcare.where("address ILIKE ?", "%#{params[:query]}%")
+    else
+      @childcares = Childcare.all
+    end
 
     @markers = @childcares.geocoded.map do |childcare|
       {
