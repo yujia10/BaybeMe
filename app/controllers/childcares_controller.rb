@@ -20,6 +20,14 @@ class ChildcaresController < ApplicationController
 
   def show
     @childcare = Childcare.find(params[:id])
+    @markers =[
+      {
+        lat: @childcare.latitude,
+        lng: @childcare.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { childcare: @childcare }),
+        image_url: helpers.asset_url("map2.png")
+      }
+    ]
   end
 
   # def childcare_params
