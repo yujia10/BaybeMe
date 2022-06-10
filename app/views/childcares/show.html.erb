@@ -25,10 +25,11 @@
     </div>
 </div>
 
-
-<div class="container mt-5">
-<h1 style="padding-left: 118px; padding-bottom: 30px;" >Google Reviews</h1>
-  <% @childcare.reviews.each do |review| %>
-    <%= render 'shared/childcare_reviews', review: review %>
-  <% end %>
+<div style="background-color: #FAEEE7; padding-top:2px;">
+  <div class="container mt-5" >
+  <h1 style="padding-left: 118px; padding-bottom: 30px;" >Google Reviews</h1>
+    <% @childcare.reviews.each do |review| %>
+      <%= render 'shared/childcare_reviews', review: review %>
+    <% end %>
+  </div>
 </div>
