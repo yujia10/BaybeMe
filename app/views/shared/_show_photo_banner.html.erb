@@ -1,9 +1,9 @@
-<div class="py-2" style= "background-color: #FAEEE7">
+<div class="py-4" style= "background-color: #FAEEE7">
   <div class="container d-flex justify-content-around align-items-center">
       <div class="photo-banner-content">
         <h1><%= @childcare.name %></h1>
         <p><i class="fas fa-regular fa-map-pin" style="color: #288568; margin-right: 8px"></i><%= @childcare.address %></p>
-        <p><i class="fas fa-regular fa-clock" style="color: #288568; margin-right: 8px"></i>Mon-Fri 6:30AM - 18:30PM</p>
+        <p><i class="fas fa-regular fa-envelope" style="color: #288568; margin-right: 8px"></i><%= @childcare.email %></p>
         <div class="cta">
           <%= link_to "APPLY NOW", new_childcare_application_path(@childcare), class: "button-primary apply-button"%>
           <a href="#" class="button-outline">SHORTLIST</a>

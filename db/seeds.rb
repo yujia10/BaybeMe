@@ -12,11 +12,10 @@ require "open-uri"
 
 User.destroy_all
 Child.destroy_all
-# add_long_alt
 # **************CHILDCARE SEEDS*********************
-# create_childcares_ids
-# insert_childcare_information
-
+create_childcares_ids
+insert_childcare_information
+add_long_alt
 
 
 
