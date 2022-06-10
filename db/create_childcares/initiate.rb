@@ -1,4 +1,4 @@
-require 'pry-byebug'
+require 'pry-byebug' if Rails.env.development?
 require "json"
 require "rest-client"
 
