@@ -3,3 +3,29 @@
 
 <%= link_to "APPLY NOW", new_childcare_application_path(@childcare)%>
 <%= link_to "Back to childcares", childcares_path%>
+
+
+
+<div class="map-wrraper d-flex justify-content-between">
+  <div class="container map-container  pl-40 mr-10 ">
+    <div id="show-map"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+  <div class="conatiner opening-hours mr-30">
+  <h2 style="padding-bottom: 20px;"> <strong>Opening Hours</strong></h2>
+  <ul>
+    <% @childcare.opening_hours.each do |time| %>
+    <li><%= time.time %></li>
+    <% end  %>
+  </ul>
+    </div>
+</div>
+
+<div class="container mt-5">
+  <% @childcare.reviews.each do |review| %>
+    <%= render 'shared/childcare_reviews', review: review %>
+  <% end %>
+</div>
