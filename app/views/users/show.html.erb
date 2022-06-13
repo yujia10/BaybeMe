@@ -1,7 +1,16 @@
   <div class="container mx-auto">
     <div class="user-container mx-auto">
+      <div class="d-flex justify-content-between">
+        <h1 class="title-panel-top">My Panel</h1>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button-logout" %>
+      </div>
+      <hr>
+    </div>
+
+    <div class="user-container mx-auto">
       <div class=" ">
-        <h1>My Details</h1>
+        <h1 class="title-panel-main">My Details</h1>
+        <hr>
         <div class="d-flex justify-content-around">
           <div>
             <h2><strong>Name: </strong><%="#{@user.first_name} #{@user.last_name}"%></h2>
@@ -13,10 +22,40 @@
       </div>
     </div>
 
-<%# shortlist %>
+  <div class="container mx-auto">
+    <div class="user-container mx-auto">
+      <div class=" ">
+      <div class="d-flex justify-content-between">
+        <h1 class="title-panel-main">My Children</h1>
+        <h2>Add a child</h2>
+      </div>
+        <hr>
+        <div>
+        <% current_user.children.each do |child| %>
+        <h2><strong><%= child.first_name %> <%= child.last_name %></strong></h2>
+        <%= link_to "view profile", child_path(child)%>
+        <%= link_to "Edit", edit_child_path(child) %>
+        <%= link_to "Delete",
+            child_path(child),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <div class="container mx-auto">
+    <div class="user-container mx-auto">
+      <div class=" ">
+        <h1 class="title-panel-main">My Applications</h1>
+        <hr>
+      </div>
+    </div>
+  </div>
 
 
-    <%= link_to "Add a Child", new_child_path%>
+
   </div>
 
   <%# create_table "users", force: :cascade do |t|

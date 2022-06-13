@@ -1,0 +1,27 @@
+.user-container {
+  margin: 30px;
+  width: 900px;
+  .title-panel-top {
+    font-size: 32px;
+    font-weight: 700;
+    color: #325288;
+  }
+  hr {
+    border: 1px solid #325288;
+  }
+}
+
+  .button-logout {
+    background-color: #325288;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 2em;
+    padding: 6px 16px;
+    margin: 4px 10px 20px;
+    &:hover {
+      background-color: #405b89;
+      color: #FFFFFF;
+    }
+  }
