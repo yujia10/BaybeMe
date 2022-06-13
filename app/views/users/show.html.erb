@@ -1,3 +1,4 @@
+  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button-outline" %>
   <div class="container mx-auto">
     <div class="user-container mx-auto">
       <div class=" ">
@@ -13,10 +14,37 @@
       </div>
     </div>
 
-<%# shortlist %>
+  <div class="container mx-auto">
+    <div class="user-container mx-auto">
+      <div class=" ">
+        <h1>My Children</h1>
+        <%= link_to "Add a Child", new_child_path%>
+        <div>
+        <% current_user.children.each do |child| %>
+        <h2><strong><%= child.first_name %> <%= child.last_name %></strong></h2>
+        <%= link_to "view profile", child_path(child)%>
+        <%= link_to "Edit", edit_child_path(child) %>
+        <%= link_to "Delete",
+            child_path(child),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+        <hr>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <div class="container mx-auto">
+    <div class="user-container mx-auto">
+      <div class=" ">
+        <h1>My Applications</h1>
+      </div>
+    </div>
+  </div>
 
 
-    <%= link_to "Add a Child", new_child_path%>
+
   </div>
 
   <%# create_table "users", force: :cascade do |t|
