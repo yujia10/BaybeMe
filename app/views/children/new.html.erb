@@ -1,10 +1,50 @@
-  <h1>Add a child</h1>
-  <%= simple_form_for @child do |f| %>
-   <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :gender %>
-    <%= f.input :dob %>
-    <%= f.submit %>
-  <% end %>
 
-  <%= link_to "Back to children", children_path %>
+   <%# <%= f.input :first_name %>
+    <%# <%= f.input :last_name %>
+    <%# <%= f.input :gender %>
+    <%# <%= f.input :dob %>
+    <%# <%= f.submit %>
+
+<%# ***********************************LINK TO SOURCE: https://codepen.io/samnorton/pen/oNYajYM %>
+  <%= link_to "Back", user_path(current_user) %>
+
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Add a child</h3>
+                        <p>Fill in the data below.</p>
+                          <%= simple_form_for @child do |f| %>
+                            <div class="col-md-12">
+                               <<%= f.input :first_name %>
+                            </div>
+                            <div class="col-md-12">
+                               <<%= f.input :last_name %>
+                            </div>
+                          <% end %>
+
+                           <div class="col-md-12 mt-3">
+                            <label class="mb-3 mr-1" for="gender">Gender: </label>
+
+                            <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
+
+                            <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
+
+                            <input type="radio" class="btn-check" name="gender" id="secret" autocomplete="off" required>
+                            <label class="btn btn-sm btn-outline-secondary" for="secret">Secret</label>
+                               <div class="valid-feedback mv-up">You selected a gender!</div>
+                                <div class="invalid-feedback mv-up">Please select a gender!</div>
+                            </div>
+
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
