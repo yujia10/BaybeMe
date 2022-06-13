@@ -1,0 +1,15 @@
+<div class="user-container mx-auto">
+      <div class=" ">
+        <h1>My Shortlist</h1>
+        <div class="d-flex justify-content-wrap py-3 mx-3">
+          <% if current_user.all_favorited == []%>
+            <p> You haven't shortlisted any childcare center</p>
+          <% else %>
+            <% current_user.all_favorited.each do |childcare| %>
+              <%= render 'shared/childcare_small card', childcare: childcare %>
+            <% end %>
+          <% end %>
+        </div>
+        <button class="button-primary">APPLY NOW</button>
+      </div>
+    </div>

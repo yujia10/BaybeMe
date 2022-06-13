@@ -8,7 +8,7 @@
           <%= link_to "SHORTLIST", toggle_favorite_childcare_path(@childcare),
                   remote: true,
                   method: :post,
-                  class: "button-outline",
+                  class: current_user.favorited?(@childcare) ? "button-primary" : "button-outline",
                   data: {
                     controller: 'shortlist-button',
                     action: 'click->shortlist-button#shortlist'
