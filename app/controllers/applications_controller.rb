@@ -6,7 +6,6 @@ class ApplicationsController < ApplicationController
 
   def new
     @application = Application.new
-    @childcare = Childcare.find(params[:childcare_id])
   end
 
   def create

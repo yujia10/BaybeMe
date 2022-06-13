@@ -2,14 +2,19 @@
       <div class=" ">
         <h1>My Shortlist</h1>
         <div class="d-flex justify-content-wrap py-3 mx-3">
-          <% if current_user.all_favorited == []%>
+          <% if current_user.all_favorited.empty?%>
             <p> You haven't shortlisted any childcare center</p>
           <% else %>
-            <% current_user.all_favorited.each do |childcare| %>
+            <% current_user.all_favorited.each_with_index do |childcare, index| %>
               <%= render 'shared/childcare_small card', childcare: childcare %>
+              <%= link_to "Delete #{childcare.name}",
+                  user_path(index),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+
             <% end %>
+            <%= link_to "APPLY NOW", new_application_path, class:"button-primary" %>
           <% end %>
         </div>
-        <button class="button-primary">APPLY NOW</button>
       </div>
     </div>
