@@ -12,15 +12,15 @@
         <div class="row">
             <div class="form-holder" style="min-height: 0;">
                 <div class="form-content">
-                    <div class="form-items" style = "background-color: #325288;">
+                    <div class="form-items" style = "background-color: #325288; position: relative;">
                         <h3>Add a child</h3>
                         <p>Fill in the data below.</p>
                           <%= simple_form_for @child do |f| %>
                             <div class="col-md-12">
-                               <<%= f.input :first_name %>
+                               <%= f.input :first_name %>
                             </div>
                             <div class="col-md-12">
-                               <<%= f.input :last_name %>
+                               <%= f.input :last_name %>
                             </div>
                           <% end %>
 
@@ -34,7 +34,7 @@
                             <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
 
                             <input type="radio" class="btn-check" name="gender" id="secret" autocomplete="off" required>
-                            <label class="btn btn-sm btn-outline-secondary" for="secret">Secret</label>
+                            <label class="btn btn-sm btn-outline-secondary" for="secret">Undisclosed</label>
                                <div class="valid-feedback mv-up">You selected a gender!</div>
                                 <div class="invalid-feedback mv-up">Please select a gender!</div>
                             </div>
@@ -44,7 +44,9 @@
                             <input type="date" id="start" name="trip-start" value="2022-06-17" min="2000-01-01" max="2022-06-17">
                             </div>
 
-                              <button class="button-primary mt-7">Start searching now</button></a>
+                              <button class="button-primary mt-7">Add child</button></a>
+
+                            <div style = "position: absolute; top: 8px; right: 16px; width: 13rem;"><img src="https://res.cloudinary.com/dxu35uhgf/image/upload/v1655099317/development/babywithbackground_je2pyh.png" alt="Baby playing"></div>
                         </form>
                     </div>
                 </div>
