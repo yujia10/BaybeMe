@@ -1,5 +1,9 @@
 class ApplicationsController < ApplicationController
 
+  def index
+    @applications.Application.all
+  end
+
   def new
     @application = Application.new
     @childcare = Childcare.find(params[:childcare_id])
@@ -12,10 +16,17 @@ class ApplicationsController < ApplicationController
     @application.childcare = @childcare
     @application.child = @child
     if  @application.save
-      redirect_to root_path, notice: "Application send"
+      redirect_to root_path, notice: "Added to my wishlist"
     else
       render :new
     end
+
+    def destroy
+      @application = Application.find(params[:application_id])
+      @application.destroy
+      redirect_to childcare_applications_path(params[:childcare_id])
+    end
+
   end
 
   private
