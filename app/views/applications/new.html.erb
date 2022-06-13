@@ -1,1 +1,11 @@
 <h1> application form</h1>
+
+
+
+<%= simple_form_for [@childcare, @application] do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= f.button :submit%>
+<% end %>
+
+<%= link_to "create application", new_childcare_application_path %>

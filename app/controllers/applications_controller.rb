@@ -11,11 +11,12 @@ class ApplicationsController < ApplicationController
 
   def create
     @childcare = Childcare.find(params[:childcare_id])
-    @child = Children.find(params[:child_id]) # need to sdjust for more than 1 kid application
-    @application = Application.new(list_params)
+    @application = Application.new
     @application.childcare = @childcare
-    @application.child = @child
-    if  @application.save
+    @application.child = current_user.children.first
+
+    if @application.save
+      ChildcareMailer.with(childcare: @childcare).new_childcare_email.deliver_now
       redirect_to root_path, notice: "Added to my wishlist"
     else
       render :new
@@ -32,7 +33,7 @@ class ApplicationsController < ApplicationController
   private
 
   def list_params
-    params.require(:application).permit(:childcare_id, :child_id,:start_date)
+    params.require(:application).permit(:childcare_id)
   end
 
 end
