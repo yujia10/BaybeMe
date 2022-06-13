@@ -6,13 +6,13 @@
     <%# <%= f.submit %>
 
 <%# ***********************************LINK TO SOURCE: https://codepen.io/samnorton/pen/oNYajYM %>
-  <%= link_to "Back", user_path(current_user) %>
 
-    <div class="form-body">
+    <div class="form-body" style = "background-color: #FAEEE7;">
+    <%= link_to "Back", user_path(current_user) %>
         <div class="row">
-            <div class="form-holder">
+            <div class="form-holder" style="min-height: 0;">
                 <div class="form-content">
-                    <div class="form-items">
+                    <div class="form-items" style = "background-color: #325288;">
                         <h3>Add a child</h3>
                         <p>Fill in the data below.</p>
                           <%= simple_form_for @child do |f| %>
@@ -24,7 +24,7 @@
                             </div>
                           <% end %>
 
-                           <div class="col-md-12 mt-3">
+                           <div class="col-md-12 mt-7">
                             <label class="mb-3 mr-1" for="gender">Gender: </label>
 
                             <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
@@ -39,9 +39,12 @@
                                 <div class="invalid-feedback mv-up">Please select a gender!</div>
                             </div>
 
-                            <div class="form-button mt-3">
-                                <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                            <div class= "mt-7">
+                            <label for="start">Birth date:</label>
+                            <input type="date" id="start" name="trip-start" value="2022-06-17" min="2000-01-01" max="2022-06-17">
                             </div>
+
+                              <button class="button-primary mt-7">Start searching now</button></a>
                         </form>
                     </div>
                 </div>
