@@ -1,2 +1,33 @@
- <h1>User profile</h1>
- <%= link_to "my children's profile", children_path%>
+  <div class="container mx-auto">
+    <div class="user-container mx-auto">
+      <div class=" ">
+        <h1>My Details</h1>
+        <div class="d-flex justify-content-around">
+          <div>
+            <h2><strong>Name: </strong><%="#{@user.first_name} #{@user.last_name}"%></h2>
+            <h2><strong>Address: </strong><%="#{@user.address}"%></h2>
+          </div>
+            <h2><strong>Email: </strong><%="#{@user.email}"%></h2>
+            <h2><strong>Phone Number: </strong><%="#{@user.phone_number}"%></h2>
+        </div>
+      </div>
+    </div>
+    <%= link_to "Add a Child", new_child_path%>
+  </div>
+
+  <%# create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone_number"
+    t.text "address"
+    t.boolean "acknowledgement", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end %>
