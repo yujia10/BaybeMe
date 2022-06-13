@@ -78,3 +78,5 @@ gem 'blazer'
  gem 'ruby-openai'
 
  gem "geocoder"
+
+ gem 'acts_as_favoritor'

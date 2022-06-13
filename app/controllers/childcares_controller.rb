@@ -30,6 +30,11 @@ class ChildcaresController < ApplicationController
     ]
   end
 
+  def toggle_favorite
+    @childcare = Childcare.find(params[:id])
+    current_user.favorited?(@childcare) ? current_user.unfavorite(@childcare) : current_user.favorite(@childcare)
+  end
+
   # def childcare_params
   #   params.require(:childcare).permit(:name, :email, :address, :url, :description, :created_at, :updated_at, :photo)
   # end

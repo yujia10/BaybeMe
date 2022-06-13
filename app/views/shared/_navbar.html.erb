@@ -16,10 +16,10 @@
           <li class="nav-item">
             <%= link_to "About", about_path, class: "nav-link tab-text" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Childcares", childcares_path, class: "nav-link tab-text" %>
-          </li>
         <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "My Shortlist", shortlist_path, class: "nav-link tab-text" %>
+          </li>
           <%= link_to "My Panel", user_path(current_user), class: "button-outline" %>
         <% else %>
           <li class="nav-item" style="padding-top: 10px">
