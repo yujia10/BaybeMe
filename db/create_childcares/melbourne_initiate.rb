@@ -45,13 +45,13 @@ def create_melbourne_childcares_data(childcares)
     "formatted_phone_number"\
     "&key=#{ENV['GOOGLE_KEY']}"
   repos = JSON.parse(response)
-  File.write("app/assets/json_files/melbourne_files/#{index+20}_data.json", JSON.dump(repos))
+  File.write("app/assets/json_files/melbourne_files/#{index}_data.json", JSON.dump(repos))
   end
 end
 
 def insert_melbourne_childcare_information(childcares)
   childcares.each_with_index do |childcare, index|
-    file = File.read "app/assets/json_files/melbourne_files/#{index+20}_data.json"
+    file = File.read "app/assets/json_files/melbourne_files/#{index}_data.json"
     hash = JSON.parse(file)
     temp = hash["result"]['name'] || nil
     temp.slice!"Nurture One"
