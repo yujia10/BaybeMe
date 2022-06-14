@@ -12,12 +12,14 @@
         <h1 class="title-panel-main">My Details</h1>
         <hr>
         <div class="d-flex justify-content-around">
+
           <div>
             <h2><strong>Name: </strong><%="#{@user.first_name} #{@user.last_name}"%></h2>
             <h2><strong>Address: </strong><%="#{@user.address}"%></h2>
           </div>
             <h2><strong>Email: </strong><%="#{@user.email}"%></h2>
             <h2><strong>Phone Number: </strong><%="#{@user.phone_number}"%></h2>
+
         </div>
       </div>
     </div>
@@ -31,15 +33,23 @@
       </div>
         <hr>
         <div>
+
         <% current_user.children.each do |child| %>
-        <h2><strong><%= child.first_name %> <%= child.last_name %></strong></h2>
-        <%= link_to "view profile", child_path(child)%>
-        <%= link_to "Edit", edit_child_path(child) %>
-        <%= link_to "Delete",
-            child_path(child),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+          <div class="card" style="width: 55rem; margin: 20px 0; background-image: url('https://res.cloudinary.com/dxu35uhgf/image/upload/v1655187164/development/yellow_baby_wc7ww2.webp'); background-size: cover;">
+             <div class="card-body">
+               <h5 class="card-title"><strong><%= child.first_name %> <%= child.last_name %></strong></h5>
+               <h6 class="card-subtitle mb-2 text-muted">Gender: <%= child.gender %></h6>
+               <p class="card-text">Date of birth: <%= child.dob %></h6></p>
+               <a href="<%=child_path(child)%>"><button  class="button-primary" style="margin-left: 0;">View profile</button></a>
+               <a href="<%=edit_child_path(child)%>"><button  class="button-primary" style="margin-left: 0;">Edit</button></a>
+               <%= link_to "Delete",
+                 child_path(child),
+                 method: :delete,
+                 data: { confirm: "Are you sure?" } %>
+             </div>
+          </div>
         <% end %>
+
         </div>
       </div>
     </div>
