@@ -22,7 +22,7 @@ def create_melbourne_childcares_ids
   hash["results"].each do |daycare|
     melbourne_daycares << Childcare.create!(place_id: daycare["place_id"], )
   end
-  create_melbourne_childcares_data(melbourne_daycares)
+  # create_melbourne_childcares_data(melbourne_daycares)
   insert_melbourne_childcare_information(melbourne_daycares)
 end
 
