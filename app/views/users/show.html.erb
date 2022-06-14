@@ -34,12 +34,12 @@
         <hr>
         <div>
 
-        <% current_user.children.each do |child| %>
-          <div class="card" style="width: 55rem; margin: 20px 0; background-image: url('https://res.cloudinary.com/dxu35uhgf/image/upload/v1655187164/development/yellow_baby_wc7ww2.webp'); background-size: cover;">
+        <% current_user.children.each_with_index do |child, index| %>
+          <div class="card" style="width: 55rem; margin: 20px 0; background-image: url('https://res.cloudinary.com/dxu35uhgf/image/upload/v1655189017/development/green_baby_qj0ugr.jpg'); background-size: cover;">
              <div class="card-body">
                <h5 class="card-title"><strong><%= child.first_name %> <%= child.last_name %></strong></h5>
-               <h6 class="card-subtitle mb-2 text-muted">Gender: <%= child.gender %></h6>
-               <p class="card-text">Date of birth: <%= child.dob %></h6></p>
+               <h6 class="card-subtitle mb-2 text-muted">Gender: <%= child.gender == 1? "Male" : "Female"  %></h6>
+               <p class="card-text">Date of birth: <%= child.dob.strftime("%d-%m-%Y") %></h6></p>
                <a href="<%=child_path(child)%>"><button  class="button-primary" style="margin-left: 0;">View profile</button></a>
                <a href="<%=edit_child_path(child)%>"><button  class="button-primary" style="margin-left: 0;">Edit</button></a>
                <%= link_to "Delete",
