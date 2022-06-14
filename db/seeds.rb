@@ -18,7 +18,7 @@ Child.destroy_all
 # add_long_alt
 
 # create_melbourne_childcares_index_file
-# create_melbourne_childcares_ids
+create_melbourne_childcares_ids
 
 
 # **************USER SEEDS*********************
