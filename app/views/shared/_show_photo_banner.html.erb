@@ -5,7 +5,7 @@
         <p><i class="fas fa-regular fa-map-pin" style="color: #288568; margin-right: 8px"></i><%= @childcare.address %></p>
         <p><i class="fas fa-regular fa-envelope" style="color: #288568; margin-right: 8px"></i><%= @childcare.email %></p>
         <div class="cta">
-          <%= link_to "SHORTLIST", toggle_favorite_childcare_path(@childcare),
+          <%= link_to "SHORTLIST", toggle_favorite_application_path(@childcare),
                   remote: true,
                   method: :post,
                   class: current_user.favorited?(@childcare) ? "button-primary" : "button-outline",

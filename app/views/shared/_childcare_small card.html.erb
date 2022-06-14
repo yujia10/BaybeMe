@@ -1,10 +1,12 @@
 <% if childcare.photos.attached? %>
   <div class="card-mine w-96 bg-base-100">
+    <%= link_to childcare_path(childcare) do %>
     <figure><img img src='<%= childcare.photos.first.url %>' alt="Shoes" /></figure>
+    <% end %>
     <div class="small-card-body">
-      <h2 style="height:30px;"><%= childcare.name %></h2>
+      <h2 style="height:30px;"><%= link_to childcare.name, childcare_path(childcare) %></h2>
       <div class="d-flex justify-content-between">
-        <div class="rating mt-2">
+        <div class="rating mt-3">
              <% (childcare.rating).to_i.times do %>
               <i class="rating-star fas fa-solid fa-star"></i>
              <% end %>
@@ -14,7 +16,15 @@
               <i class="rating-star fas fa-solid fa-star"></i>
              <% end %>
           </div>
-        <%= link_to "Show", childcare_path(childcare), class:"button-outline" %>
+          <%= link_to "SHORTLIST", toggle_favorite_application_path(childcare),
+                  remote: true,
+                  method: :post,
+                  class: current_user.favorited?(childcare) ? "button-primary" : "button-outline",
+                  data: {
+                    controller: 'shortlist-button',
+                    action: 'click->shortlist-button#shortlist'
+                  }
+           %>
       </div>
     </div>
   </div>
