@@ -5,7 +5,7 @@
     <h5 style="font-size: 20px;">Application date: <%=  @applications.first.created_at.to_s(:rfc822) %></h5>
     <h5 style="font-size: 20px;">Your child name was pushed to the following daycares:</h2>
     <ul>
-      <%=  @applications.each do |childcare| %>
+      <%  @applications.each do |childcare| %>
         <li style="font-size: 15px;"> <%= childcare.childcare.name %>
           <strong>Address:</strong>  <%= childcare.childcare.address %>
         </li>
