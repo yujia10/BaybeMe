@@ -2,34 +2,33 @@ require 'pry-byebug' if Rails.env.development?
 require "json"
 require "rest-client"
 
+MELBOURNE_CHILDCARE_INDEX = "app/assets/json_files/melbourne_childcare_index.json"
 
-CHILDCARE_INDEX = "app/assets/json_files/childcare_index.json"
-
-
-def create_childcares_index_file
+def create_melbourne_childcares_index_file
   response = RestClient.get  "https://maps.googleapis.com/maps/api/place/nearbysearch/json"\
-  "?location=-33.283581,149.101273"\
-  "&radius=7000"\
+  "?location=-37.823940,144.991250"\
+  "&radius=3000"\
   "&types=establishment"\
   "&name=child+care+centre"\
   "&key=#{ENV['GOOGLE_KEY']}"
   repos = JSON.parse(response)
-  File.write(CHILDCARE_INDEX, JSON.dump(repos))
+  File.write(MELBOURNE_CHILDCARE_INDEX, JSON.dump(repos))
 end
 
-def create_childcares_ids
-  Childcare.destroy_all
-  OpeningHour.destroy_all
-  Review.destroy_all
-  file = File.read CHILDCARE_INDEX
+def create_melbourne_childcares_ids
+  melbourne_daycares = [];
+  file = File.read MELBOURNE_CHILDCARE_INDEX
   hash = JSON.parse(file)
-  hash["results"].each_with_index do |daycare, daycare_number|
-    daycare_number = Childcare.create!(place_id: daycare["place_id"])
+  hash["results"].each do |daycare|
+    melbourne_daycares << Childcare.create!(place_id: daycare["place_id"], )
   end
+  create_melbourne_childcares_data(melbourne_daycares)
+  insert_melbourne_childcare_information(melbourne_daycares)
 end
 
-def create_childcares_data
-  Childcare.all.each_with_index do |childcare, index|
+
+def create_melbourne_childcares_data(childcares)
+  childcares.each_with_index do |childcare, index|
     response = RestClient.get  "https://maps.googleapis.com/maps/api/place/details/json"\
     "?place_id=#{childcare[:place_id]}"\
     "&fields=name,"\
@@ -46,14 +45,13 @@ def create_childcares_data
     "formatted_phone_number"\
     "&key=#{ENV['GOOGLE_KEY']}"
   repos = JSON.parse(response)
-  File.write("app/assets/json_files/Orange_childcares/#{childcare[:id]}_data.json", JSON.dump(repos))
+  File.write("app/assets/json_files/melbourne_files/#{index+20}_data.json", JSON.dump(repos))
   end
 end
 
-
-def insert_childcare_information
-  Childcare.all.each_with_index do |childcare, index|
-    file = File.read "app/assets/json_files/Orange_childcares/#{index+4}_data.json"
+def insert_melbourne_childcare_information(childcares)
+  childcares.each_with_index do |childcare, index|
+    file = File.read "app/assets/json_files/melbourne_files/#{index+20}_data.json"
     hash = JSON.parse(file)
     temp = hash["result"]['name'] || nil
     temp.slice!"Nurture One"

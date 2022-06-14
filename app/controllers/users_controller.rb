@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    # current_user.all_favorited.find(params[:id].to_i)
-
+    @childcare = Childcare.find(params[:id])
+    current_user.unfavorite(@childcare)
     redirect_to shortlist_path
   end
 end

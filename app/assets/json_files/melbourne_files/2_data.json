@@ -1,0 +1,99 @@
+{
+  "html_attributions": [],
+  "result": {
+    "formatted_address": "8 Yooralla St, Ashwood VIC 3147, Australia",
+    "formatted_phone_number": "(03) 9807 9417",
+    "geometry": { "location": { "lat": -37.8680571, "lng": 145.1046231 } },
+    "name": "Ashwood Children's Centre",
+    "opening_hours": {
+      "open_now": false,
+      "periods": [
+        {
+          "close": { "day": 1, "time": "1800" },
+          "open": { "day": 1, "time": "0700" }
+        },
+        {
+          "close": { "day": 2, "time": "1800" },
+          "open": { "day": 2, "time": "0700" }
+        },
+        {
+          "close": { "day": 3, "time": "1800" },
+          "open": { "day": 3, "time": "0700" }
+        },
+        {
+          "close": { "day": 4, "time": "1800" },
+          "open": { "day": 4, "time": "0700" }
+        },
+        {
+          "close": { "day": 5, "time": "1800" },
+          "open": { "day": 5, "time": "0700" }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 7:00 AM – 6:00 PM",
+        "Tuesday: 7:00 AM – 6:00 PM",
+        "Wednesday: 7:00 AM – 6:00 PM",
+        "Thursday: 7:00 AM – 6:00 PM",
+        "Friday: 7:00 AM – 6:00 PM",
+        "Saturday: Closed",
+        "Sunday: Closed"
+      ]
+    },
+    "rating": 5,
+    "reviews": [
+      {
+        "author_name": "Angus Bremner",
+        "author_url": "https://www.google.com/maps/contrib/101197517230771053596/reviews",
+        "language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/AOh14GgJ6nVapOhywzGxWaiTdvQ7od_nP8nIlCkFq-W7=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "3 weeks ago",
+        "text": "We had 3 children all go through this centre and couldn’t be happier. The staff are dedicated and caring and it is superbly managed. Thanks ACC!",
+        "time": 1653111068
+      },
+      {
+        "author_name": "Rex Kuo",
+        "author_url": "https://www.google.com/maps/contrib/102904443945498374569/reviews",
+        "language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/AATXAJwDuuaiuTmy349RlEgcxRhCW1kgD35NexJ478jK=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "5 months ago",
+        "text": "Have been at the centre for just over a year now with our toddler. Being a not-for-profit, the centre has an amazing community feel and is run by people that cares for nothing except the kids! Has fantastic educator to kids ratio too!",
+        "time": 1641205531
+      },
+      {
+        "author_name": "Sue",
+        "author_url": "https://www.google.com/maps/contrib/115188868168915742423/reviews",
+        "language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/AOh14GiKhQPU4MtPxCCI3c5xQ3Kzg-SsXmKzPMCaNd7S=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "4 months ago",
+        "text": "We chose Ashwood Children's Centre for our then 1 year old because of the location and could not have found a more caring and fun place for our kids to grow and learn. Both of our children now attend ACC and they absolutely love it, fully recommend!",
+        "time": 1642678972
+      },
+      {
+        "author_name": "Kim Bristowe",
+        "author_url": "https://www.google.com/maps/contrib/114748537243935221083/reviews",
+        "language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/AATXAJznafrGbbT0cAmGx_XHWEbgWpcIfsK5fzB6waAw=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "2 years ago",
+        "text": "We have been at the centre for 3 years and it really is such a special place. The educators and management are able to engage and create special bonds with the children. The educator to children ratio is higher than standard. This along with the natural outdoor play environment and room animals are why we chose the centre. Such a warm community focused childcare. Very recommended.",
+        "time": 1588636800
+      },
+      {
+        "author_name": "John Li",
+        "author_url": "https://www.google.com/maps/contrib/112759599099625156176/reviews",
+        "language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a/AATXAJxkVR6R2TJ_Lg9_zoC3iiOzKWWhGXrtYhJ1L6nY=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a year ago",
+        "text": "very reliable staff , great care, thanks for taking care of my boy, great work!",
+        "time": 1622166447
+      }
+    ],
+    "url": "https://maps.google.com/?cid=7707518030696455433",
+    "website": "https://www.ashwoodchildrenscentre.org/"
+  },
+  "status": "OK"
+}
