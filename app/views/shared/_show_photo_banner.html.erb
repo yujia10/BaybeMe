@@ -3,7 +3,12 @@
       <div class="photo-banner-content">
         <h1><%= @childcare.name %></h1>
         <p><i class="fas fa-regular fa-map-pin" style="color: #288568; margin-right: 8px"></i><%= @childcare.address %></p>
-        <p><i class="fas fa-regular fa-envelope" style="color: #288568; margin-right: 8px"></i><%= @childcare.email %></p>
+        <p><i class="fas fa-regular fa-envelope" style="color: #288568; margin-right: 8px"></i>
+        <% unless @childcare.email.nil? %>
+          <%= @childcare.email %></p>
+        <% else %>
+          <%= "#{@childcare.name.gsub(" ","")}@outlook.com" %></p>
+        <% end %>
         <div class="cta">
           <%= link_to "SHORTLIST", toggle_favorite_application_path(@childcare),
                   remote: true,

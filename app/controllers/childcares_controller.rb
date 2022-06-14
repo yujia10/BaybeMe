@@ -2,13 +2,21 @@ class ChildcaresController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    if params[:query].present?
-      @childcares = Childcare.where("address ILIKE ?", "%#{params[:query]}%")
-    else
-      @childcares = Childcare.all
+
+    if $childcares.nil? || params[:query].present?
+      if params[:query].present?
+        $childcares = []
+        if  (params[:query] == "Melbourne" || params[:query] == "Richmond" || params[:query] == "3121")
+          $childcares = Childcare.where("address ILIKE ?", "%VIC%")
+        else
+          $childcares = Childcare.where("address ILIKE ?", "%#{params[:query]}%")
+        end
+      else
+        $childcares = Childcare.all
+      end
     end
 
-    @markers = @childcares.geocoded.map do |childcare|
+    @markers = $childcares.geocoded.map do |childcare|
       {
         lat: childcare.latitude,
         lng: childcare.longitude,
@@ -35,7 +43,4 @@ class ChildcaresController < ApplicationController
     current_user.favorited?(@childcare) ? current_user.unfavorite(@childcare) : current_user.favorite(@childcare)
   end
 
-  # def childcare_params
-  #   params.require(:childcare).permit(:name, :email, :address, :url, :description, :created_at, :updated_at, :photo)
-  # end
 end

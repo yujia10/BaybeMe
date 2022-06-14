@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between " style="background-color: #FAEEE7;">
     <div class="childcares-small-cards">
-      <% @childcares.each do |childcare| %>
+      <% $childcares.each do |childcare| %>
         <%= render 'shared/childcare_small card', childcare: childcare %>
       <% end %>
     </div>

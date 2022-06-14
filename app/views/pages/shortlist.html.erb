@@ -5,16 +5,18 @@
           <% if current_user.all_favorited.empty?%>
             <p> You haven't shortlisted any childcare center</p>
           <% else %>
-            <% current_user.all_favorited.each_with_index do |childcare, index| %>
+            <% current_user.all_favorited.each do |childcare| %>
               <%= render 'shared/childcare_small card', childcare: childcare %>
               <%= link_to "Delete #{childcare.name}",
-                  user_path(index),
+                  user_path(childcare),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %>
 
             <% end %>
-            <%= link_to "APPLY NOW", new_application_path, class:"button-primary" %>
           <% end %>
         </div>
+        <% unless current_user.all_favorited.empty?%>
+            <%= link_to "APPLY NOW", new_application_path, class:"button-primary" %>
+        <% end %>
       </div>
     </div>
