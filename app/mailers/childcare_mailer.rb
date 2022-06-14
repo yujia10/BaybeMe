@@ -1,10 +1,13 @@
 class ChildcareMailer < ApplicationMailer
 
-  default from: 'Baybeme.lewagon@gmail.com'
+
 
   def new_childcare_email
-    # @childcare = params[:childcare]
-    mail(to: 'Baybeme.lewagon@gmail.com', subject: "You got new application")
+
+    @applications = params[:applications]
+    @user = params[:user]
+
+    mail(to: 'Baybeme.lewagon@gmail.com', subject: "BaybeMe Application Report")
   end
 end
 

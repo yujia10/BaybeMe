@@ -1,7 +1,7 @@
 <% if childcare.photos.attached? %>
   <div class="card-mine w-96 bg-base-100">
     <%= link_to childcare_path(childcare) do %>
-    <figure><img img src='<%= childcare.photos.first.url %>' alt="Shoes" /></figure>
+    <figure><img img src='<%= childcare.photos.first.url %>' alt="childcare" /></figure>
     <% end %>
     <div class="small-card-body">
       <h2 style="height:30px;"><%= link_to childcare.name, childcare_path(childcare) %></h2>

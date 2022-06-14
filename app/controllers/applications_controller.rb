@@ -1,7 +1,7 @@
 class ApplicationsController < ApplicationController
 
   def index
-    @applications.Application.all
+
   end
 
   def new
@@ -9,17 +9,17 @@ class ApplicationsController < ApplicationController
   end
 
   def create
-    # @childcare = Childcare.find(params[:childcare_id])
-    @application = Application.new
-    # @application.childcare = @childcare
-    # @application.child = current_user.children.first
-    ChildcareMailer.with(childcare: @childcare).new_childcare_email.deliver_now
-    if @application.save
-      ChildcareMailer.with(childcare: @childcare).new_childcare_email.deliver_now
-      redirect_to root_path, notice: "Added to my wishlist"
-    else
-      render :new
+    @applications = []
+
+    current_user.all_favorited.each do |childcare|
+      @application = Application.new
+      @application.childcare = childcare
+      @application.child = current_user.children.first
+      @application.save
+      @applications << @application
     end
+      ChildcareMailer.with(applications: @applications, user:current_user).new_childcare_email.deliver_now
+      redirect_to root_path, notice: "Added to my wishlist"
 
     def destroy
       @application = Application.find(params[:application_id])
@@ -32,7 +32,7 @@ class ApplicationsController < ApplicationController
   private
 
   def list_params
-    params.require(:application).permit(:childcare_id)
+    params.require(:application).permit(:childcare_id, :start_date)
   end
 
 end

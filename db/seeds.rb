@@ -12,6 +12,8 @@ require "open-uri"
 
 User.destroy_all
 Child.destroy_all
+Application.destroy_all
+
 # **************CHILDCARE SEEDS*********************
 # create_childcares_ids
 # insert_childcare_information
