@@ -9,11 +9,11 @@ class ApplicationsController < ApplicationController
   end
 
   def create
-    @childcare = Childcare.find(params[:childcare_id])
+    # @childcare = Childcare.find(params[:childcare_id])
     @application = Application.new
-    @application.childcare = @childcare
-    @application.child = current_user.children.first
-
+    # @application.childcare = @childcare
+    # @application.child = current_user.children.first
+    ChildcareMailer.with(childcare: @childcare).new_childcare_email.deliver_now
     if @application.save
       ChildcareMailer.with(childcare: @childcare).new_childcare_email.deliver_now
       redirect_to root_path, notice: "Added to my wishlist"
