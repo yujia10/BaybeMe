@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-<h1>fadfdf</h1>
-    <p>
-      You have successfully signed up to example.com,
-      your username is:.<br>
-    </p>
-    <p>
-      To login to the site, just follow this link: .
-    </p>
-    <p>Thanks for joining and have a great day!</p>
-  </body>
-</html>
+
+<div class=" email-body-contianer" >
+  <div class=" container email-container my-5 px-4">
+    <h1 style="color:blue;">Hi <%=@user.first_name%>  <%=@user.last_name%></h1>
+    <h5 style="font-size: 20px;">Application date: <%=  @applications.first.created_at.to_s(:rfc822) %></h5>
+    <h5 style="font-size: 20px;">Your child name was pushed to the following daycares:</h2>
+    <ul>
+      <%=  @applications.each do |childcare| %>
+        <li style="font-size: 15px;"> <%= childcare.childcare.name %>
+          <strong>Address:</strong>  <%= childcare.childcare.address %>
+        </li>
+      <% end %>
+    </ul>
+    <h5 style="font-size: 20px;">What next?</h5>
+    <p style="font-size: 20px;">You don't need to do anything, we will let you know when you get a respone from the daycares </p>
+    <p style="font-size: 20px;">Thank you for using BaybeMe website</p>
+    <p style="font-size: 20px;">We hope you enjoyed using our service. If you have any questions or suggestions, please feel free to contact us.</p>
+    <a href="http://www.baybe-me.me" style="padding-bottom:10px;" style="font-size: 20px;">BaybeMe</a>
+  </div>
+</div>
+
 
 
 <%# for testing: http://localhost:3000/rails/mailers/childcare_mailer/new_childcare_email %>
