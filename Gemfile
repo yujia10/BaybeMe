@@ -86,3 +86,8 @@ gem 'blazer'
  gem 'acts_as_favoritor'
 
 #  gem 'font-awesome-sass', '~> 6.1.1'
+gem 'premailer-rails'
+
+gem 'flatpickr'
+
+gem 'stimulus-rails'

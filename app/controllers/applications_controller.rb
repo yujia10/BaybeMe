@@ -10,6 +10,7 @@ class ApplicationsController < ApplicationController
 
   def create
     @applications = []
+
     current_user.all_favorited.each do |childcare|
       @application = Application.new
       @application.childcare = childcare
@@ -31,7 +32,7 @@ class ApplicationsController < ApplicationController
   private
 
   def list_params
-    params.require(:application).permit(:childcare_id)
+    params.require(:application).permit(:childcare_id, :start_date)
   end
 
 end
