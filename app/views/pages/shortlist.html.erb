@@ -1,22 +1,36 @@
 <div class="user-container mx-auto">
       <div class=" ">
-        <h1>My Shortlist</h1>
-        <div class="d-flex justify-content-wrap py-3 mx-3">
+        <div class="d-flex justify-content-between">
+          <h1 class="title-panel-top">My Shortlist</h1>
+          <% unless current_user.all_favorited.empty?%>
+            <%= link_to "APPLY NOW", new_application_path, class: "button-primary" %>
+          <% end %>
+        </div>
+        <hr class="my-4">
+        <div class="d-flex justfy-content-between py-3 mx-3">
           <% if current_user.all_favorited.empty?%>
             <p> You haven't shortlisted any childcare center</p>
           <% else %>
             <% current_user.all_favorited.each do |childcare| %>
-              <%= render 'shared/childcare_small card', childcare: childcare %>
-              <%= link_to "Delete #{childcare.name}",
-                  user_path(childcare),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-
+              <% if childcare.photos.attached? %>
+                <div class="card-shortlist bg-base-100 mx-3">
+                  <%= link_to childcare_path(childcare) do %>
+                  <figure><img img src='<%= childcare.photos.first.url %>' alt="childcare" /></figure>
+                  <% end %>
+                  <div class="small-card-body">
+                    <h2 class="mb-3"><%= link_to childcare.name, childcare_path(childcare) %></h2>
+                    <div class="d-flex justify-content-end">
+                      <%= link_to user_path(childcare),
+                          method: :delete,
+                          data: { confirm: "Are you sure?" } do %>
+                          <i class="fas fa-regular fa-trash icon-pink"></i>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
             <% end %>
           <% end %>
         </div>
-        <% unless current_user.all_favorited.empty?%>
-            <%= link_to "APPLY NOW", new_application_path, class:"button-primary" %>
-        <% end %>
       </div>
     </div>
