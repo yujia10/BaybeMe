@@ -72,32 +72,25 @@
         <hr class="my-4">
         <div class="mb-3">
           <div class="row">
-            <div class="col-md-4">
-              <%# <% current_user.applications.each do |application| %>
-                <%# <% child = Child.find(application.child_id) %>
-                <%# <% childcare = Childcare.find(application.childcare_id) %>
+            <% current_user.applications.each do |application| %>
+              <div class="col-md-4">
+                <% child = Child.find(application.child_id) %>
+                <% childcare = Childcare.find(application.childcare_id) %>
                 <div class="application-card p-3 mb-2">
                     <div class="d-flex justify-content-between">
                         <div class="d-flex flex-row align-items-center">
                             <div class="ms-2 c-details">
-                                <h6 class="mb-0">child name</h6> <span>application date</span>
+                                <h6 class="mb-0"><%= child.first_name %></h6> <span>application date</span>
                             </div>
                         </div>
-                        <div class="status"> <span>Pending</span> </div>
+                        <div class="status"> <span><%= application.status %></span> </div>
                     </div>
                     <div class="mt-4">
-                        <h3 class="heading">childcare name</h3>
-                        <div class="d-flex justify-content-end mt-5 icon-pink">
-                        <%# <%= link_to "Delete",
-                            application_path(application),
-                            method: :delete,
-                            data: { confirm: "Are you sure?" } %>
-                        <i class="fas fa-regular fa-trash"></i>
-                        </div>
+                        <h3 class="heading"><%= childcare.name %></h3>
                     </div>
                 </div>
-              <%# <% end %>
-            </div>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
