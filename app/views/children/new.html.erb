@@ -20,7 +20,8 @@
                           <%= f.input :last_name, required: true %>
                           <%= f.label :gender, "Gender:" %>
                           <p><%= f.select :gender, ['Male', 'Female'] %></p>
-                          <%= f.input :dob, required: false %>
+                          <%= f.label :dob, "Date of birth:" %>
+                          <%= f.input :dob, required: false, label: false %>
                           <%= f.submit :Submit, class: "button-primary" %>
                           <% end %>
 
