@@ -15,3 +15,16 @@
 @import "components/index";
 @import "pages/index";
 @import "simple_form-bootstrap/simple_form-bootstrap";
+
+/*
+ *= require_self
+ *= require sweetalert
+ *= require_tree .
+ */
+
+ /*
+ *= require_self
+ *= require sweetalert
+ *= require sweetalert/themes/twitter
+ *= require_tree .
+ */
