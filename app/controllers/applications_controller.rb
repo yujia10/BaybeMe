@@ -9,6 +9,7 @@ class ApplicationsController < ApplicationController
   end
 
   def create
+    raise
     @applications = []
 
     current_user.all_favorited.each do |childcare|
@@ -32,7 +33,12 @@ class ApplicationsController < ApplicationController
   private
 
   def list_params
-    params.require(:application).permit(:childcare_id, :start_date)
+    params.require(:application).permit(:child_id, :start_date)
   end
 
 end
+
+
+# @booking.start_date = Date.parse(list_params[:date][0..9])
+
+# start_date = Date.parse(list_params[:start_date])

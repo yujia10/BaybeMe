@@ -1,32 +1,31 @@
-
-
-<div class="d-flex flex-column application-container mx-auto">
-  <h1>Application</h1>
-  <div class=" container mx-auto mt-5" style="text-align: center;">
-    <%= simple_form_for [@childcare, @application] do |f| %>
-      <% children_array =  current_user.children.map { |name| "#{name.first_name}"}%>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-          <div class="col my-2">
-            <h5>Enter start date for your child</h5>
-          </div>
-          <div class="col my-2">
-            <%= f.text_field :start_date,
-              data: {
-                controller: "flatpickr",
-                flatpickr_date_format: ("d-m-Y"),
-                flatpickr_min_date: Time.zone.now #disables past dates
-              } ,placeholder: "Date", class:"application-date"%>
-          </div>
-          <div class="col my-2">
-            <h5>Choose a Child</h5>
-          </div>
-          <div class="col my-2">
-             <%= f.input :child_id, label: false, as: :select, collection: [children_array] , placeholder: 'Child list'%>
-          </div>
-          <div class="col my-2">
-            <%= f.button :submit, "Send Application",class:"button-outline application-burron"%>
+<div class="form-body" style = "background-color: #FAEEE7;">
+  <div class="row">
+    <div class="form-holder" style="min-height: 0;">
+      <div class="form-content">
+        <div class="form-items" style = "background-color: #325288; position: relative;">
+          <h3>Application Form</h3>
+          <p>The application will send your child name to all the daycares in your list</p>
+            <%= simple_form_for [@childcare, @application] do |f| %>
+              <% children_array =  current_user.children.map { |name| "#{name.first_name}"}%>
+              <%= f.error_notification %>
+              <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+              <div class="col-md-12">
+                  <%= f.text_field :start_date,
+                  data: {
+                    controller: "flatpickr",
+                    flatpickr_date_format: ("d-m-Y"),
+                    flatpickr_alt_format: t("date.formats.long"),
+                    flatpickr_alt_input: true,
+                    flatpickr_min_date: Time.zone.now #disables past dates
+                  } ,placeholder: "When is the start date for you child?"%>
+              </div>
+              <div class="col-md-12">
+                <%= f.input :child_id,  label: false,label: false,  collection: [children_array] ,prompt: "Pick from your Children"%>
+              </div>
+              <%= f.button :submit, "Send Application",class:"button-primary mt-7"%>
+            <% end %>
+        </div>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
