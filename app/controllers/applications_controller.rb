@@ -9,6 +9,7 @@ class ApplicationsController < ApplicationController
   end
 
   def create
+
     @applications = []
     current_user.all_favorited.each do |childcare|
       @application = Application.new
