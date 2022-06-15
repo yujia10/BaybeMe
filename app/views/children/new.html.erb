@@ -13,40 +13,18 @@
             <div class="form-holder" style="min-height: 0;">
                 <div class="form-content">
                     <div class="form-items" style = "background-color: #325288; position: relative;">
-                        <h3>Add a child</h3>
-                        <p>Fill in the data below.</p>
+                        <h3>Add new child</h3>
+                        <p>Fill in your child's details below:</p>
                           <%= simple_form_for @child do |f| %>
-                            <div class="col-md-12">
-                               <%= f.input :first_name %>
-                            </div>
-                            <div class="col-md-12">
-                               <%= f.input :last_name %>
-                            </div>
+                          <%= f.input :first_name, required: true, label: "First name:" %>
+                          <%= f.input :last_name, required: true %>
+                          <%= f.label :gender, "Gender:" %>
+                          <%= f.select :gender, ['Male', 'Female'] %>
+                          <%= f.input :dob , required: false %>
+                          <%= f.submit :submit, class: "button-primary" %>
                           <% end %>
 
-                           <div class="col-md-12 mt-7">
-                            <label class="mb-3 mr-1" for="gender">Gender: </label>
-
-                            <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
-                            <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
-
-                            <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
-                            <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
-
-                            <input type="radio" class="btn-check" name="gender" id="secret" autocomplete="off" required>
-                            <label class="btn btn-sm btn-outline-secondary" for="secret">Undisclosed</label>
-                               <div class="valid-feedback mv-up">You selected a gender!</div>
-                                <div class="invalid-feedback mv-up">Please select a gender!</div>
-                            </div>
-
-                            <div class= "mt-7">
-                            <label for="start">Birth date:</label>
-                            <input type="date" id="start" name="trip-start" value="2022-06-17" min="2000-01-01" max="2022-06-17">
-                            </div>
-
-                              <button class="button-primary mt-7">Add child</button></a>
-
-                            <div style = "position: absolute; top: 8px; right: 16px; width: 13rem;"><img src="https://res.cloudinary.com/dxu35uhgf/image/upload/v1655099317/development/babywithbackground_je2pyh.png" alt="Baby playing"></div>
+            <div style = "position: absolute; top: 8px; right: 16px; width: 13rem;"><img src="https://res.cloudinary.com/dxu35uhgf/image/upload/v1655099317/development/babywithbackground_je2pyh.png" alt="Baby playing"></div>
                         </form>
                     </div>
                 </div>

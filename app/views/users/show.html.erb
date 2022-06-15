@@ -91,8 +91,6 @@
                <h5 class="card-title"><strong><%= child.first_name %> <%= child.last_name %></strong></h5>
                <h6 class="card-subtitle mb-2 text-muted">Gender: <%= child.gender == 1? "Male" : "Female"  %></h6>
                <p class="card-text">Date of birth: <%= child.dob.strftime("%d-%m-%Y") %></h6></p>
-               <a href="<%=child_path(child)%>"><button  class="button-primary" style="margin-left: 0;">View profile</button></a>
-               <a href="<%=edit_child_path(child)%>"><button  class="button-primary" style="margin-left: 0;">Edit</button></a>
                <%= link_to "Delete",
                  child_path(child),
                  method: :delete,
