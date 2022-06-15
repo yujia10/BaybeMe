@@ -5,6 +5,8 @@
 
 .navbar-baby .navbar-collapse {
   flex-grow: 0;
+  overflow: visible;
+
   li {
     padding: 0;
     margin: 0 8px;
