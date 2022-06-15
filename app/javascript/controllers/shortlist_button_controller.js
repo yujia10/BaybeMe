@@ -12,9 +12,11 @@ export default class extends Controller {
     if(this.element.classList.contains('button-outline')){
       this.element.classList.remove('button-outline');
       this.element.classList.add('button-primary');
+      this.element.innerHTML = "Add to shortlist"
     }else{
       this.element.classList.remove('button-primary');
       this.element.classList.add('button-outline');
+      this.element.innerHTML = "⎷ Added"
     }
   }
 
