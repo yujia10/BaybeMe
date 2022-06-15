@@ -64,12 +64,14 @@
 }
 
 .status span {
-  width: 60px;
-  height: 25px;
+  width: 75px;
+  height: 30px;
   padding-bottom: 3px;
   border-radius: 5px;
   display: flex;
-  color: #fec93c;
+  background-color: #fffbec;
+  color: #FA7F72;
+  font-size: 16px;
   justify-content: center;
   align-items: center
 }
