@@ -1,31 +1,8 @@
-.application-container {
-  margin-top:30px;
-  border-radius: 3px;
-  width:500px;
-  border: 1px solid #000000;
-  margin-bottom: 40px;
-  background-color: white;
-  border-radius: 10px;
-  height: 500px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, .2);
-  padding: 30px;
-
-  h1 {
-    text-align: center;
-    font-weight: 600;
-    font-size: xx-large;
-  }
-
-  .application-date {
-    border: 1px solid black;
-    padding: 0 16px;
-    margin-top: 10px;
-    border-radius: 5px;
-    text-align: center;
-  }
+.date-form {
+  height: 50px !important;
 }
 
-.application-burron {
-  position: relative;
-  bottom: -120px;
+
+.application-form {
+  box-shadow: 0 10px 130px rgba(0, 0, 0, 0.1) !important;
 }
