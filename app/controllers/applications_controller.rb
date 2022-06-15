@@ -9,7 +9,6 @@ class ApplicationsController < ApplicationController
   end
 
   def create
-    flash.now[:notice] = "Successfully checked in"
     @applications = []
     current_user.all_favorited.each do |childcare|
       @application = Application.new
@@ -18,19 +17,17 @@ class ApplicationsController < ApplicationController
       @application.child = current_user.children.first
       @application.save
       @applications << @application
-
     end
-    flash[:notice] = 'Successfully checked in'
-      ChildcareMailer.with(applications: @applications, user:current_user).new_childcare_email.deliver_now
-      redirect_to root_path, flash: {notice: "Successfully checked in"}
-
-    def destroy
-      @application = Application.find(params[:application_id])
-      @application.destroy
-      redirect_to childcare_applications_path(params[:childcare_id])
-    end
-
+    ChildcareMailer.with(applications: @applications, user:current_user).new_childcare_email.deliver_now
+    redirect_to root_path, flash: {notice: "Application was submitted Successfully, check your email"}
   end
+
+  def destroy
+    @application = Application.find(params[:application_id])
+    @application.destroy
+    redirect_to childcare_applications_path(params[:childcare_id])
+  end
+
 
   private
 
