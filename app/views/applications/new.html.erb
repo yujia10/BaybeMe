@@ -18,7 +18,8 @@
                             flatpickr_alt_input: true,
                           } ,placeholder: "When is the start date for you child?" %>
                           <%= f.select :child_id, childrens_array, label: false, prompt: "Pick from your Children", class:"date-form" %>
-                          <%= f.button :submit, "Send Application",class:"button-primary mx-auto mt-7"%>
+                          <%= f.button :submit, "Send Application",class:"button-primary mx-auto mt-7", id:"sweet-alert-demo"%>
+                          <button id="sweet-alert-demo" class="btn btn-primary">Click me!</button>
                         <% end %>
                       </form>
                   </div>
