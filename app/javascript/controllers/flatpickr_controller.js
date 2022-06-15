@@ -13,7 +13,7 @@ export default class extends Flatpickr {
   initialize() {
     // sets your language (you can also set some global setting for all time pickers)
     this.config = {
-      mode: "range",
+      dateFormat: "Y-m-d",
     }
   }
 
