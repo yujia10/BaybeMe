@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Baybeme</title>
+    <title>Baybeme. You've got a lot to care about...let us take care of daycare!</title>
+
+<%# Favicon below*********** %>
+   <%= favicon_link_tag %>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,7 +19,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-    <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['Google_api'] %>&libraries=places&callback=initMap" async defer data-turbolinks-eval="false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_KEY'] %>&libraries=places&callback=initMap" async defer data-turbolinks-eval="false"></script>
   </head>
 
   <body>

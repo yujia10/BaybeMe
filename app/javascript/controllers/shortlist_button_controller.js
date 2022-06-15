@@ -16,7 +16,7 @@ export default class extends Controller {
     }else{
       this.element.classList.remove('button-primary');
       this.element.classList.add('button-outline');
-      this.element.innerHTML = "⎷ Added"
+      this.element.innerHTML = "Added"
     }
   }
 
