@@ -3,7 +3,7 @@
 import Flatpickr from 'stimulus-flatpickr'
 
 // you can also import a translation file
-//import { Hebrew } from 'flatpickr/dist/l10n/he.js'
+// import { English } from 'flatpickr/dist/l10n/en.js'
 
 // import a theme (could be in your main CSS entry too...)
 import 'flatpickr/dist/themes/dark.css'
@@ -12,16 +12,15 @@ import 'flatpickr/dist/themes/dark.css'
 export default class extends Flatpickr {
   initialize() {
     // sets your language (you can also set some global setting for all time pickers)
-    // this.config = {
-    //   mode: "range",
-    // }
+    this.config = {
+      dateFormat: "Y-m-d"
+    }
   }
-}
 
   // all flatpickr hooks are available as callbacks in your Stimulus controller
-//   change(selectedDates, dateStr, instance) {
-//     console.log('the callback returns the selected dates', selectedDates)
-//     console.log('but returns it also as a string', dateStr)
-//     console.log('and the flatpickr instance', instance)
-//   }
-// }
+  change(selectedDates, dateStr, instance) {
+    console.log('the callback returns the selected dates', selectedDates)
+    console.log('but returns it also as a string', dateStr)
+    console.log('and the flatpickr instance', instance)
+  }
+}

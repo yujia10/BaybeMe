@@ -8,11 +8,11 @@ const application = Application.start()
 const context = require.context("controllers", true, /_controller\.js$/)
 application.load(definitionsFromContext(context))
 
-// import Flatpickr
-import Flatpickr from 'stimulus-flatpickr'
+// // import Flatpickr
+// import Flatpickr from 'stimulus-flatpickr'
 
-// Import style for flatpickr
-require("flatpickr/dist/flatpickr.css")
+// // Import style for flatpickr
+// require("flatpickr/dist/flatpickr.css")
 
-// Manually register Flatpickr as a stimulus controller
-application.register('flatpickr', Flatpickr)
+// // Manually register Flatpickr as a stimulus controller
+// application.register('flatpickr', Flatpickr)
