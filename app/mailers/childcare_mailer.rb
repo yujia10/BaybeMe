@@ -7,7 +7,7 @@ class ChildcareMailer < ApplicationMailer
     @applications = params[:applications]
     @user = params[:user]
 
-    mail(to: 'Baybeme.lewagon@gmail.com', subject: "BaybeMe Application Report")
+    mail(to: 'yaron.kraushar@gmail.com', subject: "BaybeMe Application Report")
   end
 end
 
