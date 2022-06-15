@@ -7,11 +7,11 @@
 
 <%# ***********************************LINK TO SOURCE: https://codepen.io/samnorton/pen/oNYajYM %>
 
-    <div class="form-body" style = "background-color: #FAEEE7;">
-    <%= link_to "Back", user_path(current_user) %>
+    <div class="form-body" style = "background-color: #FAEEE7; padding-top: 0px;">
+      <p style= "padding-top: 20px;"><%= link_to "Back", user_path(current_user), class: "button-outline" %></div>
         <div class="row">
-            <div class="form-holder" style="min-height: 0;">
-                <div class="form-content">
+            <div class="form-holder" style="min-height: 0; background-color: #FAEEE7;">
+                <div class="form-content", style= "padding-top: 20px;">
                     <div class="form-items" style = "background-color: #325288; position: relative;">
                         <h3>Add new child</h3>
                         <p>Fill in your child's details below:</p>
@@ -19,9 +19,9 @@
                           <%= f.input :first_name, required: true, label: "First name:" %>
                           <%= f.input :last_name, required: true %>
                           <%= f.label :gender, "Gender:" %>
-                          <%= f.select :gender, ['Male', 'Female'] %>
-                          <%= f.input :dob , required: false %>
-                          <%= f.submit :submit, class: "button-primary" %>
+                          <p><%= f.select :gender, ['Male', 'Female'] %></p>
+                          <%= f.input :dob, required: false %>
+                          <%= f.submit :Submit, class: "button-primary" %>
                           <% end %>
 
             <div style = "position: absolute; top: 8px; right: 16px; width: 13rem;"><img src="https://res.cloudinary.com/dxu35uhgf/image/upload/v1655099317/development/babywithbackground_je2pyh.png" alt="Baby playing"></div>
