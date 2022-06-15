@@ -9,14 +9,20 @@ class ApplicationsController < ApplicationController
   end
 
   def create
+
     @applications = []
     current_user.all_favorited.each do |childcare|
       @application = Application.new
-      @application.start_date = start_date = Date.parse(list_params[:start_date])
-      @application.childcare = childcare
-      @application.child = current_user.children.first
-      @application.save
-      @applications << @application
+      # unless list_params[:start_date].empty?
+        start_date = Date.parse(list_params[:start_date])
+        @application.start_date = start_date
+        @application.childcare = childcare
+        @application.child = current_user.children.first
+        @application.save
+        @applications << @application
+      # else
+      #   render :new
+      # end
     end
     ChildcareMailer.with(applications: @applications, user:current_user).new_childcare_email.deliver_now
     redirect_to root_path, flash: {notice: "Application was submitted Successfully, check your email"}

@@ -1,6 +1,6 @@
 // ./controllers/flatpickr_controller.js
 // import stimulus-flatpickr wrapper controller to extend it
-application.register('flatpickr', Flatpickr)
+
 import Flatpickr from 'stimulus-flatpickr'
 
 // you can also import a translation file

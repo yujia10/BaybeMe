@@ -14,3 +14,13 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#sweet-alert-demo', {
+  title: "Application was submitted Successfully",
+  text: "Check your email",
+  icon: "success"
+}, (value) => {
+  console.log(value);
+});

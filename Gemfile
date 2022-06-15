@@ -91,3 +91,5 @@ gem 'premailer-rails'
 gem 'flatpickr'
 
 gem 'stimulus-rails'
+
+gem 'sweetalert-rails'
