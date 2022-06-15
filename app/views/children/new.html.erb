@@ -16,15 +16,24 @@
                         <h3>Add new child</h3>
                         <p>Fill in your child's details below:</p>
                           <%= simple_form_for @child do |f| %>
-                          <%= f.input :first_name, required: true, label: "First name:" %>
-                          <%= f.input :last_name, required: true %>
-                          <%= f.label :gender, "Gender:" %>
-                          <p><%= f.select :gender, ['Male', 'Female'] %></p>
-                          <%= f.input :dob, required: false %>
-                          <%= f.submit :Submit, class: "button-primary" %>
-                          <% end %>
+                            <%= f.label :first_name, "First name" %>
+                            <%= f.input :first_name, required: true, label: false %>
+                            <%= f.label :last_name, "Last name" %>
+                            <%= f.input :last_name, required: true,label:false %>
+                            <%= f.label :gender, "Gender" %>
+                            <p style="margin-bottom: 0;"><%= f.select :gender, ['Male', 'Female'] %></p>
+                            <%= f.label :dob, "Date Of Birth" %>
+                            <%= f.text_field :dob,
+                              data: {
+                                controller: "flatpickr",
+                                flatpickr_date_format: ("d-m-Y"),
+                                flatpickr_alt_format: t("date.formats.long"),
+                                flatpickr_alt_input: true,
 
-            <div style = "position: absolute; top: 8px; right: 16px; width: 13rem;"><img src="https://res.cloudinary.com/dxu35uhgf/image/upload/v1655099317/development/babywithbackground_je2pyh.png" alt="Baby playing"></div>
+                              }, class:"new-child-form" %>
+                            <%= f.submit :Submit, class: "button-primary mt-8" %>
+                          <% end %>
+                         <div style = "position: absolute; top: 8px; right: 16px; width: 13rem;"><img src="https://res.cloudinary.com/dxu35uhgf/image/upload/v1655099317/development/babywithbackground_je2pyh.png" alt="Baby playing"></div>
                         </form>
                     </div>
                 </div>

@@ -1,9 +1,10 @@
 
-<div class=" email-body-contianer" >
+<div class=" email-body-contianer" style="border: 1px solid black; border-radius: 25px; padding:30px;" >
   <div class=" container email-container my-5 px-4">
     <h1 style="color:blue;">Hi <%=@user.first_name%>  <%=@user.last_name%></h1>
     <h5 style="font-size: 20px;">Application date: <%=  @applications.first.created_at.to_s(:rfc822) %></h5>
-    <h5 style="font-size: 20px;">Your child name was pushed to the following daycares:</h2>
+    <h5 style="font-size: 20px;"><%= @applications.first.child.first_name %> name was successfully pushed to the following daycares:</h2>
+    <h5 style="font-size: 20px;">Start date is: <%=@applications.first.start_date  %></h5>
     <ul>
       <%  @applications.each do |childcare| %>
         <li style="font-size: 15px;"> <%= childcare.childcare.name %>
@@ -13,9 +14,10 @@
     </ul>
     <h5 style="font-size: 20px;">What next?</h5>
     <p style="font-size: 20px;">You don't need to do anything, we will let you know when you get a respone from the daycares </p>
+    <p style="font-size: 20px;">To see appplication status, go to your user profile</p>
     <p style="font-size: 20px;">Thank you for using BaybeMe website</p>
     <p style="font-size: 20px;">We hope you enjoyed using our service. If you have any questions or suggestions, please feel free to contact us.</p>
-    <a href="http://www.baybe-me.me" style="padding-bottom:10px;" style="font-size: 20px;">BaybeMe</a>
+    <a href="http://www.baybe-me.me" style="padding-bottom:10px; font-size: 10px;" style="font-size: 20px;">BaybeMe</a>
   </div>
 </div>
 
