@@ -7,24 +7,32 @@
 
 <%# ***********************************LINK TO SOURCE: https://codepen.io/samnorton/pen/oNYajYM %>
 
-    <div class="form-body" style = "background-color: #FAEEE7;">
-    <%= link_to "Back", user_path(current_user) %>
+    <div class="form-body" style = "background-color: #FAEEE7; padding-top: 0px;">
+      <p style= "padding-top: 20px;"><%= link_to "Back", user_path(current_user), class: "button-outline" %></div>
         <div class="row">
-            <div class="form-holder" style="min-height: 0;">
-                <div class="form-content">
+            <div class="form-holder" style="min-height: 0; background-color: #FAEEE7;">
+                <div class="form-content", style= "padding-top: 20px;">
                     <div class="form-items" style = "background-color: #325288; position: relative;">
                         <h3>Add new child</h3>
                         <p>Fill in your child's details below:</p>
                           <%= simple_form_for @child do |f| %>
-                          <%= f.input :first_name, required: true, label: "First name:" %>
-                          <%= f.input :last_name, required: true %>
-                          <%= f.label :gender, "Gender:" %>
-                          <%= f.select :gender, ['Male', 'Female'] %>
-                          <%= f.input :dob , required: false %>
-                          <%= f.submit :submit, class: "button-primary" %>
+                            <%= f.label :first_name, "First name" %>
+                            <%= f.input :first_name, required: true, label: false %>
+                            <%= f.label :last_name, "Last name" %>
+                            <%= f.input :last_name, required: true,label:false %>
+                            <%= f.label :gender, "Gender" %>
+                            <p style="margin-bottom: 0;"><%= f.select :gender, ['Male', 'Female'] %></p>
+                            <%= f.label :dob, "Date Of Birth" %>
+                            <%= f.text_field :dob,
+                              data: {
+                                controller: "flatpickr",
+                                flatpickr_date_format: ("d-m-Y"),
+                                flatpickr_alt_format: t("date.formats.long"),
+                                flatpickr_alt_input: true,
+                              }, class:"new-child-form" %>
+                            <%= f.submit :Submit, class: "button-primary mt-8" %>
                           <% end %>
-
-            <div style = "position: absolute; top: 8px; right: 16px; width: 13rem;"><img src="https://res.cloudinary.com/dxu35uhgf/image/upload/v1655099317/development/babywithbackground_je2pyh.png" alt="Baby playing"></div>
+                         <div style = "position: absolute; top: 8px; right: 16px; width: 13rem;"><img src="https://res.cloudinary.com/dxu35uhgf/image/upload/v1655099317/development/babywithbackground_je2pyh.png" alt="Baby playing"></div>
                         </form>
                     </div>
                 </div>
