@@ -18,7 +18,7 @@ import "bootstrap"
 
 import { initSweetalert } from '../plugins/init_sweetalert';
 
-initSweetalert('.sweet-alert-apply', {
+initSweetalert('#sweet-alert-apply', {
   title: "Application was submitted Successfully",
   text: "Check your email for details",
   icon: "success"
