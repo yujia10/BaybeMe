@@ -1,12 +1,21 @@
-// .notice-flash {
-//   width: auto;
-//   position: fixed;
-//   top: 100px;
-//   right: 16px;
-//   height: 50px;
-//   background-color: rgb(241, 247, 159);
-//   box-shadow: 0 10px 30px rgba(0,0,0,.1);
-//   border: 1px solid black;
-//   border-radius: 4px;
-
-// }
+.notice-flash {
+  width: auto;
+  position: fixed;
+  top: 100px;
+  right: 16px;
+  height: 50px;
+  color: #325288;
+  background-color: #F4F4F4;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  border-radius: 4px;
+}
+.button-alert {
+  background-color: #d0eaf7 !important;
+  color: black;
+  font-size: 14px;
+  font-weight: 400;
+  border: none;
+  border-radius: 2em;
+  padding: 5px 12px;
+  margin: 4px 5px 0 0;
+}
