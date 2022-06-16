@@ -8,7 +8,12 @@
 <%# ***********************************LINK TO SOURCE: https://codepen.io/samnorton/pen/oNYajYM %>
 
     <div class="form-body" style = "background-color: #FAEEE7; padding-top: 0px;">
-      <p style= "padding-top: 20px;"><%= link_to "Back", user_path(current_user), class: "button-outline" %></div>
+      <div class="py-4" style="background-color: #FAEEE7">
+        <div class="container" >
+          <i class="fas fa-solid fa-chevron-left icon-pink"></i>
+          <%= link_to "Back to profile", user_path(current_user), class: "back-link" %>
+        </div>
+      </div>
         <div class="row">
             <div class="form-holder" style="min-height: 0; background-color: #FAEEE7;">
                 <div class="form-content", style= "padding-top: 20px;">

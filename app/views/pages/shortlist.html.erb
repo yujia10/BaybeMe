@@ -1,18 +1,26 @@
+<div class="py-4" style="background-color: #F4F4F4">
+  <div class="container" >
+    <i class="fas fa-solid fa-chevron-left icon-pink"></i>
+    <%= link_to "Back to search results", childcares_path, class: "back-link"%>
+  </div>
+</div>
 <div class="user-container mx-auto">
       <div class=" ">
         <div class="d-flex justify-content-between">
           <h1 class="title-panel-top">My Shortlist</h1>
           <% unless current_user.all_favorited.empty?%>
-            <%= link_to "APPLY NOW", new_application_path, class: "button-primary" %>
+            <%= link_to "Send application to all", new_application_path, class: "button-primary" %>
           <% end %>
         </div>
         <hr class="my-4">
-        <div class="d-flex justfy-content-between py-3 mx-3">
+        <div class="py-1 mx-3">
           <% if current_user.all_favorited.empty?%>
             <p> You haven't shortlisted any childcare center</p>
           <% else %>
+           <div class="row">
             <% current_user.all_favorited.each do |childcare| %>
               <% if childcare.photos.attached? %>
+               <div class="col-md-4 my-3">
                 <div class="card-shortlist bg-base-100 mx-3">
                   <%= link_to childcare_path(childcare) do %>
                   <figure><img img src='<%= childcare.photos.first.url %>' alt="childcare" /></figure>
@@ -28,8 +36,10 @@
                     </div>
                   </div>
                 </div>
+               </div>
               <% end %>
             <% end %>
+           </div>
           <% end %>
         </div>
       </div>
