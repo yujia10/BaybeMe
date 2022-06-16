@@ -25,7 +25,7 @@ class ApplicationsController < ApplicationController
       # end
     end
     ChildcareMailer.with(applications: @applications, user:current_user).new_childcare_email.deliver_now
-    redirect_to root_path, flash: {notice: "Application was submitted Successfully, check your email"}
+    redirect_to root_path, flash: {notice: "Application was submitted Successfully. Check your email for details."}
   end
 
   def destroy
