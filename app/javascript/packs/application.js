@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
@@ -17,10 +18,13 @@ import "bootstrap"
 
 import { initSweetalert } from '../plugins/init_sweetalert';
 
-initSweetalert('#sweet-alert-demo', {
+initSweetalert('.sweet-alert-apply', {
   title: "Application was submitted Successfully",
-  text: "Check your email",
+  text: "Check your email for details",
   icon: "success"
 }, (value) => {
-  console.log(value);
+  if (value) {
+    const link = document.querySelector('.delete-link');
+    link.click();
+  }
 });
