@@ -1,6 +1,11 @@
-
-    <div class="car-card mx-3">
+<div style="width: 200px">
+  <div class="marker-img mx-2 my-1 text-center">
+    <%= link_to childcare_path(childcare) do %>
+    <figure><img img src='<%= childcare.photos.first.url if childcare.photos.attached? %>' alt="childcare" /></figure>
+    <% end %>
+  </div>
+    <div class="mx-2 my-2">
       <h6><%= link_to childcare.name, childcare_path(childcare) %></h6>
-      <p><%= childcare.email %></p>
-    <p><%= childcare.address %></p>
+      <p><%= childcare.address %></p>
+    </div>
   </div>
