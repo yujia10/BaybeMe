@@ -10,6 +10,7 @@
           <%= "#{@childcare.name.gsub(" ","")}@outlook.com" %></p>
         <% end %>
         <div class="cta">
+          <% if user_signed_in? %>
           <%= link_to current_user.favorited?(@childcare) ? "Added" : "Add to shortlist", toggle_favorite_application_path(@childcare),
                   remote: true,
                   method: :post,
@@ -19,6 +20,9 @@
                     action: 'click->shortlist-button#shortlist'
                   }
            %>
+           <% else %>
+            <%= link_to "Add to shortlist", new_user_session_path, class: "button-primary" %>
+           <% end %>
         </div>
 
       </div>
