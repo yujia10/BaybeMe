@@ -6,7 +6,7 @@
                   <div class="form-items" style = "background-color: #325288; position: relative;">
                       <h3>Application Form</h3>
                       <p>The application will send your child name to all the daycares in your list</p>
-                        <%= simple_form_for [@childcare, @application]  do |f| %>
+                        <%= simple_form_for [@application]  do |f| %>
                           <%= f.error_notification %>
                           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
                           <% childrens_array =  current_user.children.map { |name| ["#{name.first_name}"] }%>
@@ -18,7 +18,7 @@
                             flatpickr_alt_input: true,
                           } ,placeholder: "When is the start date for you child?" %>
                           <%= f.select :child_id, childrens_array, label: false, prompt: "Pick from your Children", class:"date-form" %>
-                          <%= f.button :submit, "Send Application", class:"button-primary mx-auto mt-7 submit-link", id: "sweet-alert-apply"%>
+                          <%= f.button :submit, "Send Application", class:"button-primary mx-auto mt-7" %>
                         <% end %>
                       </form>
                   </div>

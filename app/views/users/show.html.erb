@@ -56,7 +56,11 @@
                                 <h6 class="mb-0"><%= child.first_name %></h6> <span>start date: <%= application.start_date %></span>
                             </div>
                         </div>
-                        <div class="status"> <span><%= application.status %></span> </div>
+                        <% if application.status = "pending" %>
+                          <div class="status"> <span><%= application.status %></span> </div>
+                        <% else %>
+                          <div class="accepted-status"> <span><%= application.status %></span> </div>
+                        <% end %>
                     </div>
                     <div class="mt-4">
                         <h3 class="heading"><%= childcare.name %></h3>
