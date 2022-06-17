@@ -4,8 +4,9 @@
     <figure><img img src='<%= childcare.photos.first.url if childcare.photos.attached? %>' alt="childcare" /></figure>
     <% end %>
   </div>
-    <div class="mx-2 my-2">
-      <h6><%= link_to childcare.name, childcare_path(childcare) %></h6>
-      <p><%= childcare.address %></p>
-    </div>
+
+  <div class="mx-2 my-2">
+    <h6><%= link_to childcare.name, childcare_path(childcare) %></h6>
+    <p><%= childcare.address %></p>
   </div>
+</div>
