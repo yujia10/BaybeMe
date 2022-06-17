@@ -8,6 +8,19 @@
   top: 0;
 }
 
+.reminder {
+  margin: 16px 16px 0 16px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 16px;
+  h4 {
+    font-size: 20px;
+    color: #325288;
+    font-weight: 500;
+    text-align: center;
+  }
+}
 // body {
 //   background-color: #FAEEE7;
 // }
