@@ -2,7 +2,11 @@
   <div>
     <div class="reminder d-flex justify-content-start align-items-center">
       <h4 class="mx-3">Add your child's profile and start application now !</h4>
-      <%= link_to "GO", user_path(current_user), class: "button-primary" %>
+      <% if user_signed_in? %>
+        <%= link_to "GO", user_path(current_user), class: "button-primary" %>
+      <% else %>
+        <%= link_to "GO", new_user_session_path, class: "button-primary" %>
+      <% end %>
     </div>
     <div class="childcares-small-cards">
       <% $childcares.each do |childcare| %>
