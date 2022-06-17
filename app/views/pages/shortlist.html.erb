@@ -27,7 +27,8 @@
                   <% end %>
                   <div class="small-card-body">
                     <h2 class="mb-3"><%= link_to childcare.name, childcare_path(childcare) %></h2>
-                    <div class="d-flex justify-content-end">
+                    <div class="d-flex justify-content-end align-items-center">
+                      <%= link_to "Apply", new_application_path, class: "shortlist-apply" %>
                       <%= link_to user_path(childcare),
                           method: :delete,
                           data: { confirm: "Are you sure?" } do %>
