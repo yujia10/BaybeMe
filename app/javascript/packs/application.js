@@ -16,15 +16,15 @@ ActiveStorage.start()
 import "controllers"
 import "bootstrap"
 
-import { initSweetalert } from '../plugins/init_sweetalert';
+// import { initSweetalert } from '../plugins/init_sweetalert';
 
-initSweetalert('.sweet-alert-apply', {
-  title: "Application was submitted Successfully",
-  text: "Check your email for details",
-  icon: "success"
-}, (value) => {
-  if (value) {
-    const link = document.querySelector('.delete-link');
-    link.click();
-  }
-});
+// initSweetalert('.sweet-alert-demo', {
+//   title: "Application was submitted Successfully",
+//   text: "Check your email for details",
+//   icon: "success"
+// }, (value) => {
+//   if (value) {
+//     const link = document.querySelector('.apply-link');
+//     link.click();
+//   }
+// });
