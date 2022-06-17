@@ -31,3 +31,17 @@
   margin-right: 5px;
   font-size: 16px;
 }
+.shortlist-apply{
+  background-color: #ff4b90 !important;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 2em;
+  padding: 5px 14px;
+  margin: 4px 10px 5px 0;
+  &:hover {
+    background-color: #f55d97 !important;
+    color: #FFFFFF;
+  }
+}
